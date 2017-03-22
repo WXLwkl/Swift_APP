@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="K0f-Gy-BAH" customClass="BannerView" customModule="SwiftDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="571" height="277"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD9-Cy-Elo">
+                    <rect key="frame" x="0.0" y="0.0" width="571" height="285.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZD9-Cy-Elo" secondAttribute="height" multiplier="2:1" id="eHH-zf-t57"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kYu-w7-JoX"/>
+                    </connections>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Joh-8b-Lnl">
+                    <rect key="frame" x="246" y="235" width="80" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Ee3-OF-gP3"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.037429042760000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZD9-Cy-Elo" firstAttribute="leading" secondItem="K0f-Gy-BAH" secondAttribute="leading" id="9Q9-Ow-7u4"/>
+                <constraint firstItem="ZD9-Cy-Elo" firstAttribute="top" secondItem="K0f-Gy-BAH" secondAttribute="top" id="E7C-IT-Wyb"/>
+                <constraint firstItem="Joh-8b-Lnl" firstAttribute="centerX" secondItem="K0f-Gy-BAH" secondAttribute="centerX" id="KJX-lD-ee6"/>
+                <constraint firstAttribute="bottom" secondItem="Joh-8b-Lnl" secondAttribute="bottom" constant="5" id="dVV-tu-d6e"/>
+                <constraint firstAttribute="trailing" secondItem="ZD9-Cy-Elo" secondAttribute="trailing" id="gBp-HT-a1V"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="74.5" y="-314.5"/>
+        </view>
+    </objects>
+</document>

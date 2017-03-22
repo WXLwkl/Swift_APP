@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hbB-I5-xiX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--应用-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nuz-jS-32G">
+                                <rect key="frame" x="66" y="213" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nuz-jS-32G" secondAttribute="height" multiplier="1:1" id="54e-xH-Po7"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8u-qa-Vuh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T8u-qa-Vuh" secondAttribute="height" multiplier="2:1" id="ZuH-k5-FQl"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9yg-ZY-tef"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-Sc-Da2">
+                                <rect key="frame" x="285" y="145.5" width="80" height="37"/>
+                                <color key="tintColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="gm1-3k-pLW"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.80392158030000005" green="0.80392158030000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T8u-qa-Vuh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="88u-qZ-Hyb"/>
+                            <constraint firstAttribute="trailing" secondItem="T8u-qa-Vuh" secondAttribute="trailing" id="H8E-aN-sBR"/>
+                            <constraint firstItem="Nuz-jS-32G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-1.5" id="IoH-mL-uYE"/>
+                            <constraint firstItem="Kjc-Sc-Da2" firstAttribute="trailing" secondItem="T8u-qa-Vuh" secondAttribute="trailing" constant="-10" id="Myi-iu-4K5"/>
+                            <constraint firstItem="T8u-qa-Vuh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WGQ-bG-0dL"/>
+                            <constraint firstItem="Nuz-jS-32G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="dKh-CL-y0V"/>
+                            <constraint firstItem="Kjc-Sc-Da2" firstAttribute="bottom" secondItem="T8u-qa-Vuh" secondAttribute="bottom" constant="-5" id="ofh-HA-QfZ"/>
+                            <constraint firstItem="Nuz-jS-32G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r67-5C-7sn"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="应用" image="item0_1" id="j8i-up-MF7"/>
+                    <connections>
+                        <outlet property="banner" destination="T8u-qa-Vuh" id="opg-A0-F8w"/>
+                        <outlet property="imageView" destination="Nuz-jS-32G" id="xEC-lY-oR5"/>
+                        <outlet property="pageControl" destination="Kjc-Sc-Da2" id="4zn-dX-kW7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-698.39999999999998" y="-987.25637181409309"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="vXp-br-qwG">
+            <objects>
+                <viewController id="J9p-w0-vgc" customClass="MyViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K6V-4K-znt"/>
+                        <viewControllerLayoutGuide type="bottom" id="YUb-bO-yZC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="smx-hh-38h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我的" image="item2_1" selectedImage="item2_1" id="z5Z-GF-361"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-gZ-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815" y="560"/>
+        </scene>
+        <!--商城-->
+        <scene sceneID="kbe-px-m4u">
+            <objects>
+                <viewController id="sxY-28-3Du" customClass="MallViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Id-i7-F2p"/>
+                        <viewControllerLayoutGuide type="bottom" id="TOD-wg-gK1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6md-5o-XaJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="商城" image="item1_1" id="SWe-vb-ZDR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NJ-e4-2XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815" y="-197"/>
+        </scene>
+        <!--Tabbar View Controller-->
+        <scene sceneID="fmq-4x-aGI">
+            <objects>
+                <tabBarController id="hbB-I5-xiX" customClass="TabbarViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ODf-co-fpb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.037429042760000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="hNt-hf-Wfz"/>
+                        <segue destination="sxY-28-3Du" kind="relationship" relationship="viewControllers" id="Xcq-Jg-itP"/>
+                        <segue destination="J9p-w0-vgc" kind="relationship" relationship="viewControllers" id="SLg-cg-iiA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9v-yH-8re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4679" y="145"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="item0_1" width="30" height="30"/>
+        <image name="item1_1" width="30" height="30"/>
+        <image name="item2_1" width="30" height="30"/>
+    </resources>
+</document>
