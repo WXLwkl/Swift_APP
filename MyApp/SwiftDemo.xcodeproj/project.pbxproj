@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910CA9431E8E04E100E667B3 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 910CA9421E8E04E100E667B3 /* index.html */; };
+		910CA9451E8E37DE00E667B3 /* message.html in Resources */ = {isa = PBXBuildFile; fileRef = 910CA9441E8E37DE00E667B3 /* message.html */; };
 		91CE1D901E80EE660062113D /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE1D8F1E80EE660062113D /* TabbarViewController.swift */; };
 		91CE1D931E81043B0062113D /* MyLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE1D921E81043B0062113D /* MyLike.swift */; };
 		91CE1D961E8105EE0062113D /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE1D951E8105EE0062113D /* MallViewController.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		10CDFBF35BD384969FB3B332 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4982664E6589BA738F3C65BE /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		910CA9421E8E04E100E667B3 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		910CA9441E8E37DE00E667B3 /* message.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = message.html; sourceTree = "<group>"; };
 		91CE1D8F1E80EE660062113D /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		91CE1D921E81043B0062113D /* MyLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLike.swift; sourceTree = "<group>"; };
 		91CE1D951E8105EE0062113D /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				91E368FB1DBF5C2200958A41 /* ViewController.swift */,
 				91CE1D951E8105EE0062113D /* MallViewController.swift */,
 				91CE1D971E8105FC0062113D /* MyViewController.swift */,
+				910CA9421E8E04E100E667B3 /* index.html */,
+				910CA9441E8E37DE00E667B3 /* message.html */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -177,9 +183,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910CA9431E8E04E100E667B3 /* index.html in Resources */,
 				91CE1D9C1E810EB60062113D /* BannerView.xib in Resources */,
 				91E369041DBF5C2200958A41 /* LaunchScreen.storyboard in Resources */,
 				91E369011DBF5C2200958A41 /* Assets.xcassets in Resources */,
+				910CA9451E8E37DE00E667B3 /* message.html in Resources */,
 				91E368FF1DBF5C2200958A41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

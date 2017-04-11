@@ -18,6 +18,7 @@ class TabbarViewController: UITabBarController,UITabBarControllerDelegate {
         self.tabBar.isTranslucent = false  //避免受默认的半透明色影响，关闭
 //        设置选中颜色
         self.tabBar.tintColor = UIColor(red: 0/255, green:186/255, blue:255/255, alpha:1)
+        self.selectedIndex = 1;
     }
 
     override func didReceiveMemoryWarning() {

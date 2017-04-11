@@ -8,18 +8,35 @@
 
 import UIKit
 
-class MallViewController: UIViewController {
+import WebKit
+
+class MallViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
-        let img = UIImage(named: "POS_TY633")
+        let screenSize = UIScreen.main.bounds.size
+        print(screenSize)
+        let frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height);
+        let webView = WKWebView(frame: frame)
+        let res = Bundle.main.path(forResource: "message", ofType: "html")
+        let url = URL(fileURLWithPath: res!)
+        webView .load(URLRequest(url: url))
+        webView.navigationDelegate = self
+        self.view.addSubview(webView)
 
         
     }
-
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.navigationItem.title = webView.title
+        
+//        [webView stringByReplacingOccurrencesOfString:"{app_version}" withString:CLIENTVERSION];
+//        [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"getMessageFromApp('%@')", @"加载结束调用方法"]];
+//
+//        let subBodyHtml = NSString.stringByReplacingOccurrencesOfString("{app_version}", withString: "3.1.0")
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

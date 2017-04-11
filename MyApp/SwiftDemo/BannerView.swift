@@ -18,9 +18,9 @@ class BannerView: UIView {
     }
     */
     
-    override init(frame: CGRect) {
-        
-    }
+//    override init(frame: CGRect) {
+//        
+//    }
     
     
 

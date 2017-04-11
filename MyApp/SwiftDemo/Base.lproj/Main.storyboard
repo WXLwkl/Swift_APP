@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="-698.39999999999998" y="-987.25637181409309"/>
         </scene>
-        <!--我的-->
+        <!--My View Controller-->
         <scene sceneID="vXp-br-qwG">
             <objects>
                 <viewController id="J9p-w0-vgc" customClass="MyViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,13 +84,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" image="item2_1" selectedImage="item2_1" id="z5Z-GF-361"/>
+                    <navigationItem key="navigationItem" id="Nqt-aI-GRh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-gZ-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-815" y="560"/>
+            <point key="canvasLocation" x="124" y="559.97001499250382"/>
         </scene>
-        <!--商城-->
+        <!--Mall View Controller-->
         <scene sceneID="kbe-px-m4u">
             <objects>
                 <viewController id="sxY-28-3Du" customClass="MallViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,11 +103,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="商城" image="item1_1" id="SWe-vb-ZDR"/>
+                    <navigationItem key="navigationItem" id="9vN-Ur-SjO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NJ-e4-2XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-815" y="-197"/>
+            <point key="canvasLocation" x="124" y="-197.45127436281859"/>
         </scene>
         <!--Tabbar View Controller-->
         <scene sceneID="fmq-4x-aGI">
@@ -120,13 +120,51 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="hNt-hf-Wfz"/>
-                        <segue destination="sxY-28-3Du" kind="relationship" relationship="viewControllers" id="Xcq-Jg-itP"/>
-                        <segue destination="J9p-w0-vgc" kind="relationship" relationship="viewControllers" id="SLg-cg-iiA"/>
+                        <segue destination="a5a-pr-19e" kind="relationship" relationship="viewControllers" id="Xcq-Jg-itP"/>
+                        <segue destination="B0C-eE-Efw" kind="relationship" relationship="viewControllers" id="SLg-cg-iiA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9v-yH-8re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4679" y="145"/>
+            <point key="canvasLocation" x="-3030" y="9"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="YhX-bu-YTC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0C-eE-Efw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="item2_1" selectedImage="item2_1" id="z5Z-GF-361"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6O1-je-54F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J9p-w0-vgc" kind="relationship" relationship="rootViewController" id="3wL-nM-yDd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ams-80-peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815.20000000000005" y="559.97001499250382"/>
+        </scene>
+        <!--商城-->
+        <scene sceneID="BNK-e5-SUs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5a-pr-19e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="商城" image="item1_1" id="SWe-vb-ZDR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJc-Hh-CRe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sxY-28-3Du" kind="relationship" relationship="rootViewController" id="R7x-pp-heW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0HW-AL-nNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815.20000000000005" y="-197.45127436281859"/>
         </scene>
     </scenes>
     <resources>

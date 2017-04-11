@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "621E60FA9B3A26C1FC870C2981E2987463F5C432",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "25FB4C79C41FA564166C41731DC401291628BD08" : 9223372036854775807,
+    "621E60FA9B3A26C1FC870C2981E2987463F5C432" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A79ADC35-8FCA-42DB-B1FF-BB633B4D300C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "25FB4C79C41FA564166C41731DC401291628BD08" : "",
+    "621E60FA9B3A26C1FC870C2981E2987463F5C432" : "Swift_APP\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyApp\/SwiftDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WXLwkl\/XLTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "25FB4C79C41FA564166C41731DC401291628BD08"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WXLwkl\/Swift_APP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "621E60FA9B3A26C1FC870C2981E2987463F5C432"
+    }
+  ]
+}
