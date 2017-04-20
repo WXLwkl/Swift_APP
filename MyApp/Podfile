@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+#platform :ios, '9.0'
 
 target 'SwiftDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,9 +7,9 @@ target 'SwiftDemo' do
 
   # Pods for SwiftDemo
   
-pod 'Alamofire'
-pod 'SDWebImage'
-pod 'SwiftyJSON'
+  pod 'Alamofire'   #网络库 类似 AFNetWork
+  pod 'Kingfisher'  #图片库 类似 SDWebImage
+  pod 'SwiftyJSON'  #JSON库
 
 
 end

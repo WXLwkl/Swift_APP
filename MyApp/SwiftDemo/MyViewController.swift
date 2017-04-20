@@ -9,14 +9,31 @@
 import UIKit
 
 
-class MyViewController: UIViewController {
+class MyViewController: UIViewController, BannerViewDelegate {
 
+    lazy var cycleModels : [BannerModel] = [BannerModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "个人中心"
         
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 2, width: view.bounds.width, height: 50))
+        label.text = "AAA"
+        label.backgroundColor = #colorLiteral(red: 0.4488613621, green: 1, blue: 0.5756808982, alpha: 1)
+        label.textAlignment = .center
+        view.addSubview(label)
+        
     }
 
+    func bannerView(_ banner: BannerView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        let view = NextViewController()
+        view.hidesBottomBarWhenPushed = true
+        view.navigationItem.title = "\(indexPath.row)"
+        navigationController?.pushViewController(view, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
