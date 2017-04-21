@@ -12,4 +12,12 @@ class AppListCell: UICollectionViewCell {
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    var applistModel: ApplistModel? {
+        didSet {
+            iconImage.image = UIImage(named: applistModel?.image ?? "")
+            titleLabel.text = applistModel?.title
+        }
+    }
+    
 }

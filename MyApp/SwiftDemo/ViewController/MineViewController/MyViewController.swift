@@ -17,6 +17,8 @@ class MyViewController: UIViewController, BannerViewDelegate {
         super.viewDidLoad()
         self.navigationItem.title = "个人中心"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(MyViewController.addBtnclick(_:)))
+        
         
         let label = UILabel(frame: CGRect(x: 0, y: 2, width: view.bounds.width, height: 50))
         label.text = "AAA"
@@ -25,6 +27,12 @@ class MyViewController: UIViewController, BannerViewDelegate {
         view.addSubview(label)
         
     }
+    
+    
+    func addBtnclick(_ item: UIBarButtonItem) {
+        
+    }
+    
 
     func bannerView(_ banner: BannerView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)

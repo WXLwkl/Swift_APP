@@ -17,10 +17,13 @@ private let BannerCellID = "BannerCell"
 class ViewController: UIViewController,UIScrollViewDelegate,BannerViewDelegate {
 
     lazy var cycleModels : [BannerModel] = [BannerModel]()
+    lazy var applistModels: [ApplistModel] = [ApplistModel]()
     
     var bannerView: BannerView? = nil
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var applistArray: NSArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,18 @@ class ViewController: UIViewController,UIScrollViewDelegate,BannerViewDelegate {
         for dict in bannerArr {
             cycleModels.append(BannerModel(dict: dict))
         }
+        
+        let path = Bundle.main.bundlePath
+        let plistName:NSString = "Applist.plist"
+        let finalPath = (path as NSString).appendingPathComponent(plistName as String)
+        
+        applistArray = NSArray(contentsOfFile:finalPath as String)!
+        
+        for dic in applistArray! {
+            applistModels.append(ApplistModel(dict: dic as! [String : Any]))
+        }
+        printLog(message: applistArray)
+        
         
     }
     
@@ -95,7 +110,7 @@ extension ViewController : UICollectionViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 20
+            return applistArray?.count ?? 0
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,8 +128,11 @@ extension ViewController : UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppListCellID, for: indexPath) as! AppListCell
-            cell.iconImage.image = UIImage(named: "POS_TY633")
-            cell.titleLabel.text = "ABCDEFG"
+            let dic: NSDictionary = applistArray?[indexPath.row] as! NSDictionary
+            printLog(message: dic)
+//            cell.iconImage.image = UIImage(named: dic["image"])
+//            cell.titleLabel.text = dic["title"]
+            cell.applistModel = applistModels[indexPath.row]
             return cell
         }
     }
@@ -123,10 +141,75 @@ extension ViewController : UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        printLog(message: indexPath.row)
+//        printLog(message: indexPath.row)
+        
+        let model: ApplistModel = applistModels[indexPath.row]
+        printLog(message: model.vc)
+        
+
+        
+        navigationController?.pushViewController(VCSTRING_TO_VIEWCONTROLLER(model.vc)!, animated: true)
         
     }
 }
+
+
+func VCSTRING_TO_VIEWCONTROLLER(_ childControllerName: String) -> UIViewController?{
+    
+         // 1.获取命名空间
+       // 通过字典的键来取值,如果键名不存在,那么取出来的值有可能就为没值.所以通过字典取出的的类型为AnyObject?
+         guard let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] else {
+                 print("命名空间不存在")
+                 return nil
+        }
+         // 2.通过命名空间和类名转换成类
+         let cls : AnyClass? = NSClassFromString((clsName as! String) + "." + childControllerName)
+    
+        // swift 中通过Class创建一个对象,必须告诉系统Class的类型
+         guard let clsType = cls as? UIViewController.Type else {
+                 print("无法转换成UIViewController")
+                return nil
+            }
+        // 3.通过Class创建对象
+        let childController = clsType.init()
+    
+        return childController
+    }
+
+
+//private func addChildViewController(childControllerName : String,title : String,normalImage : String) {
+//    
+//    // 1.获取命名空间
+//    guard let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] else {
+//        printLog(message: "命名空间不存在")
+//        return
+//    }
+//    // 2.通过命名空间和类名转换成类
+//    let cls : AnyClass? = NSClassFromString((clsName as! String) + "." + childControllerName)
+//    
+//    // swift 中通过Class创建一个对象,必须告诉系统Class的类型
+//    guard let clsType = cls as? UITableViewController.Type else {
+//        printLog(message: "无法转换成UITableViewController")
+//        return
+//    }
+//    
+//    // 3.通过Class创建对象
+//    let childController = clsType.init()
+//    
+//    // 设置TabBar和Nav的标题
+//    childController.title = title
+//    childController.tabBarItem.image = UIImage(named: normalImage)
+//    childController.tabBarItem.selectedImage = UIImage(named: normalImage + "_highlighted")
+//    
+//    // 包装导航控制器
+//    let nav = UINavigationController(rootViewController: childController)
+//    addChildViewController(nav)
+//}
+
+
+
+
+
 //MARK: - UICollectionViewDelegateFlowLayout
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
