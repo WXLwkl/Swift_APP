@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		91249EB01E9F4D7A00387E12 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91249EAF1E9F4D7A00387E12 /* BannerView.swift */; };
+		913D914D1EB07AAE00C4BDEE /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D914C1EB07AAE00C4BDEE /* Tool.swift */; };
+		913D91511EB0926500C4BDEE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D91501EB0926500C4BDEE /* Constant.swift */; };
 		9194F7181EA9F09F00282954 /* Applist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9194F7141EA9F09F00282954 /* Applist.plist */; };
 		9194F7191EA9F09F00282954 /* AppListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F7151EA9F09F00282954 /* AppListCell.swift */; };
 		9194F71A1EA9F09F00282954 /* ApplistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F7161EA9F09F00282954 /* ApplistModel.swift */; };
@@ -15,6 +17,11 @@
 		9194F71F1EA9F10400282954 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F71C1EA9F10400282954 /* BannerCell.swift */; };
 		9194F7201EA9F10400282954 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F71D1EA9F10400282954 /* BannerModel.swift */; };
 		9194F7211EA9F10400282954 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9194F71E1EA9F10400282954 /* BannerView.xib */; };
+		91D0E61D1EAF1ABE00F4B3FB /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E61C1EAF1ABE00F4B3FB /* TabbarViewController.swift */; };
+		91D0E6211EAF1CCB00F4B3FB /* QRScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E61E1EAF1CCB00F4B3FB /* QRScanVC.swift */; };
+		91D0E6221EAF1CCB00F4B3FB /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E61F1EAF1CCB00F4B3FB /* String+QRCode.swift */; };
+		91D0E6231EAF1CCB00F4B3FB /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E6201EAF1CCB00F4B3FB /* UIImage+QRCode.swift */; };
+		91D0E6251EAF1DE300F4B3FB /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E6241EAF1DE300F4B3FB /* QRViewController.swift */; };
 		91E368FA1DBF5C2200958A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E368F91DBF5C2200958A41 /* AppDelegate.swift */; };
 		91E368FF1DBF5C2200958A41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E368FD1DBF5C2200958A41 /* Main.storyboard */; };
 		91E369011DBF5C2200958A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E369001DBF5C2200958A41 /* Assets.xcassets */; };
@@ -25,9 +32,6 @@
 		91F967BC1EAA03FF00D6B5C6 /* MyLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967BB1EAA03FF00D6B5C6 /* MyLike.swift */; };
 		91F967C01EAA044100D6B5C6 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 91F967BE1EAA044100D6B5C6 /* index.html */; };
 		91F967C11EAA044100D6B5C6 /* message.html in Resources */ = {isa = PBXBuildFile; fileRef = 91F967BF1EAA044100D6B5C6 /* message.html */; };
-		91F967C81EAA05E400D6B5C6 /* QrcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967C51EAA05E400D6B5C6 /* QrcodeVC.swift */; };
-		91F967C91EAA05E400D6B5C6 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967C61EAA05E400D6B5C6 /* Tools.swift */; };
-		91F967CA1EAA05E400D6B5C6 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967C71EAA05E400D6B5C6 /* QRViewController.swift */; };
 		ECFF00D4AE98D94FB983DF72 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CAFAFC6B95C8A9A07DBE8B /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,8 @@
 		10CDFBF35BD384969FB3B332 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4982664E6589BA738F3C65BE /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		91249EAF1E9F4D7A00387E12 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerView.swift; path = Banner/BannerView.swift; sourceTree = "<group>"; };
+		913D914C1EB07AAE00C4BDEE /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		913D91501EB0926500C4BDEE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		9194F7141EA9F09F00282954 /* Applist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Applist.plist; sourceTree = "<group>"; };
 		9194F7151EA9F09F00282954 /* AppListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppListCell.swift; sourceTree = "<group>"; };
 		9194F7161EA9F09F00282954 /* ApplistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplistModel.swift; sourceTree = "<group>"; };
@@ -42,6 +48,11 @@
 		9194F71C1EA9F10400282954 /* BannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerCell.swift; path = Banner/BannerCell.swift; sourceTree = "<group>"; };
 		9194F71D1EA9F10400282954 /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerModel.swift; path = Banner/BannerModel.swift; sourceTree = "<group>"; };
 		9194F71E1EA9F10400282954 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BannerView.xib; path = Banner/BannerView.xib; sourceTree = "<group>"; };
+		91D0E61C1EAF1ABE00F4B3FB /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		91D0E61E1EAF1CCB00F4B3FB /* QRScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanVC.swift; sourceTree = "<group>"; };
+		91D0E61F1EAF1CCB00F4B3FB /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
+		91D0E6201EAF1CCB00F4B3FB /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
+		91D0E6241EAF1DE300F4B3FB /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		91E368F61DBF5C2200958A41 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E368F91DBF5C2200958A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E368FE1DBF5C2200958A41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,9 +65,6 @@
 		91F967BB1EAA03FF00D6B5C6 /* MyLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLike.swift; sourceTree = "<group>"; };
 		91F967BE1EAA044100D6B5C6 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		91F967BF1EAA044100D6B5C6 /* message.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = message.html; sourceTree = "<group>"; };
-		91F967C51EAA05E400D6B5C6 /* QrcodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrcodeVC.swift; sourceTree = "<group>"; };
-		91F967C61EAA05E400D6B5C6 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
-		91F967C71EAA05E400D6B5C6 /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		F0CAFAFC6B95C8A9A07DBE8B /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				91E368F91DBF5C2200958A41 /* AppDelegate.swift */,
+				91D0E61C1EAF1ABE00F4B3FB /* TabbarViewController.swift */,
 				91F967C21EAA04EA00D6B5C6 /* Storyboard */,
 				9194F7121EA9F09F00282954 /* ViewController */,
 				91F967C31EAA055300D6B5C6 /* Function(功能) */,
@@ -178,7 +187,9 @@
 		91F967BA1EAA03FF00D6B5C6 /* ConmonTools */ = {
 			isa = PBXGroup;
 			children = (
+				913D914C1EB07AAE00C4BDEE /* Tool.swift */,
 				91F967BB1EAA03FF00D6B5C6 /* MyLike.swift */,
+				913D91501EB0926500C4BDEE /* Constant.swift */,
 			);
 			path = ConmonTools;
 			sourceTree = "<group>";
@@ -213,9 +224,10 @@
 		91F967C41EAA057500D6B5C6 /* QRViewController(二维码) */ = {
 			isa = PBXGroup;
 			children = (
-				91F967C51EAA05E400D6B5C6 /* QrcodeVC.swift */,
-				91F967C61EAA05E400D6B5C6 /* Tools.swift */,
-				91F967C71EAA05E400D6B5C6 /* QRViewController.swift */,
+				91D0E6241EAF1DE300F4B3FB /* QRViewController.swift */,
+				91D0E61E1EAF1CCB00F4B3FB /* QRScanVC.swift */,
+				91D0E61F1EAF1CCB00F4B3FB /* String+QRCode.swift */,
+				91D0E6201EAF1CCB00F4B3FB /* UIImage+QRCode.swift */,
 			);
 			name = "QRViewController(二维码)";
 			path = QRViewController;
@@ -257,7 +269,7 @@
 					91E368F51DBF5C2200958A41 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8X9B8PWC45;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -349,17 +361,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91F967C91EAA05E400D6B5C6 /* Tools.swift in Sources */,
 				9194F71A1EA9F09F00282954 /* ApplistModel.swift in Sources */,
 				91F967B91EA9FEE200D6B5C6 /* NextViewController.swift in Sources */,
+				913D914D1EB07AAE00C4BDEE /* Tool.swift in Sources */,
+				91D0E6211EAF1CCB00F4B3FB /* QRScanVC.swift in Sources */,
+				91D0E6251EAF1DE300F4B3FB /* QRViewController.swift in Sources */,
 				91249EB01E9F4D7A00387E12 /* BannerView.swift in Sources */,
-				91F967CA1EAA05E400D6B5C6 /* QRViewController.swift in Sources */,
 				9194F7191EA9F09F00282954 /* AppListCell.swift in Sources */,
 				9194F7201EA9F10400282954 /* BannerModel.swift in Sources */,
 				91E368FA1DBF5C2200958A41 /* AppDelegate.swift in Sources */,
+				91D0E6231EAF1CCB00F4B3FB /* UIImage+QRCode.swift in Sources */,
+				91D0E61D1EAF1ABE00F4B3FB /* TabbarViewController.swift in Sources */,
+				913D91511EB0926500C4BDEE /* Constant.swift in Sources */,
+				91D0E6221EAF1CCB00F4B3FB /* String+QRCode.swift in Sources */,
 				9194F71B1EA9F09F00282954 /* ViewController.swift in Sources */,
 				91F967B41EA9FB7900D6B5C6 /* MallViewController.swift in Sources */,
-				91F967C81EAA05E400D6B5C6 /* QrcodeVC.swift in Sources */,
 				91F967B71EA9FBC400D6B5C6 /* MyViewController.swift in Sources */,
 				9194F71F1EA9F10400282954 /* BannerCell.swift in Sources */,
 				91F967BC1EAA03FF00D6B5C6 /* MyLike.swift in Sources */,
@@ -489,14 +505,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8X9B8PWC45;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yjpal.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "70d80ac4-709c-414b-a33e-0a12a4e86936";
+				PROVISIONING_PROFILE_SPECIFIER = App_debug;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

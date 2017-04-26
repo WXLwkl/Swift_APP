@@ -9,10 +9,8 @@
 import UIKit
 
 
-class MyViewController: UIViewController, BannerViewDelegate {
+class MyViewController: UIViewController {
 
-    lazy var cycleModels : [BannerModel] = [BannerModel]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "个人中心"
@@ -28,24 +26,36 @@ class MyViewController: UIViewController, BannerViewDelegate {
         
     }
     
-    
-    func addBtnclick(_ item: UIBarButtonItem) {
-        
-    }
-    
-
-    func bannerView(_ banner: BannerView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-        let view = NextViewController()
-        view.hidesBottomBarWhenPushed = true
-        view.navigationItem.title = "\(indexPath.row)"
-        navigationController?.pushViewController(view, animated: true)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    func addBtnclick(_ item: UIBarButtonItem) {
+        appInfo()
+    }
+    
+// TODO: - 设备信息
+    func appInfo() -> Void {
+        
+        print("It's a print")
+        debugPrint("It's a debugPrint")
+        CFShow("It's a CFShow" as CFTypeRef!)
+        
+        print("-----------------------------------")
+        let mainBundle = Bundle.main
+        let identifier = mainBundle.bundleIdentifier
+        let info = mainBundle.infoDictionary
+        let bundleId = mainBundle.object(forInfoDictionaryKey: "CFBundleName")
+        let version = mainBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString")
+        print("[identifier]:\(identifier)")
+        print("[info]:\(info)")
+        print("[bundleId]:\(bundleId!)")
+        print("[version]:\(version!)")
+    }
+    
     
 
     /*

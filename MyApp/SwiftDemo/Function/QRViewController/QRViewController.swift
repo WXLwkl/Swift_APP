@@ -10,36 +10,67 @@ import UIKit
 
 class QRViewController: UIViewController {
 
-    @IBOutlet weak var textF: UITextField!
+    var text: String!
     
+    @IBOutlet weak var textF: UITextField!
+    @IBOutlet weak var logoImgView: UIImageView!
     @IBOutlet weak var imgV: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "扫描", style: UIBarButtonItemStyle.plain, target: self, action: #selector(QRViewController.scanQR(_:)))
 
         view.backgroundColor = #colorLiteral(red: 0.4488613621, green: 1, blue: 0.5756808982, alpha: 1)
-        
-        
-//        let v = BannerCycleView(frame: CGRect(x: 5, y: 350, width: UIScreen.main.bounds.width - 10, height: 138))
-//        v.cycleModels = cycleModels
-//        view.addSubview(v)
-        
+  
+        textF.text = text
     }
     //二维码生成
     @IBAction func createBtnClick(_ sender: UIButton) {
         textF.resignFirstResponder()
-        self.imgV.image = Tools.createQRForString(self.textF.text, qrImageNage: "")
+        
+        guard let content = textF.text else {
+            Tool.confirm(title: "温馨提示", message: "请输入内容", controller: self)
+            return
+        }
+        
+        if content.characters.count > 0 {
+            DispatchQueue.global().async {
+                let image = content.generateQRCodeWithLogo(logo: self.logoImgView.image)
+//                let image = content.generateQRCode(size: 400, color: UIColor.red, bgColor: UIColor.white, logo: self.logoImgView.image)
+                DispatchQueue.main.async(execute: {
+                    self.imgV.image = image
+                })
+            }
+        } else {
+            
+            Tool.confirm(title: "温馨提示", message: "请输入内容", controller: self)
+        }
+        
+        
         
     }
     //二维码扫描
-    @IBAction func scanBtnClick(_ sender: UIButton) {
-        let vc = QrcodeVC()
+    func scanQR(_ sender: UIButton) {
+        let vc = QRScanVC()
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func recognizeQRCode(_ sender: UIButton) {
+        printLog(message: imgV.image)
+        
+        
+        let str = self.imgV.image?.recognizeQRCode()
+        
+        print(str!)
+    }
     
+    @IBAction func chooseLogo(_ sender: UITapGestureRecognizer) {
+        Tool.shared.choosePicture(self, editor: true) { [weak self](image) in
+            self?.logoImgView.image = image
+        }
+    }
     
     
     
