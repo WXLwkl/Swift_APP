@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a5a-pr-19e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mall View Controller-->
+        <scene sceneID="kbe-px-m4u">
+            <objects>
+                <viewController id="sxY-28-3Du" customClass="MallViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Id-i7-F2p"/>
+                        <viewControllerLayoutGuide type="bottom" id="TOD-wg-gK1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6md-5o-XaJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9vN-Ur-SjO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NJ-e4-2XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-381" y="-180"/>
+        </scene>
+        <!--商城-->
+        <scene sceneID="BNK-e5-SUs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5a-pr-19e" customClass="NavigationController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="商城" image="item1_1" id="SWe-vb-ZDR"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
+                        <color key="tintColor" red="0.6980247300924195" green="1" blue="0.97275099209066729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJc-Hh-CRe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sxY-28-3Du" kind="relationship" relationship="rootViewController" id="R7x-pp-heW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0HW-AL-nNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1119" y="-214"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="item1_1" width="30" height="30"/>
+    </resources>
+</document>

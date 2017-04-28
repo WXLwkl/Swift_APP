@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QRViewController: UIViewController {
+class QRViewController: RootViewController {
 
     var text: String!
     
@@ -20,9 +20,11 @@ class QRViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "扫描", style: UIBarButtonItemStyle.plain, target: self, action: #selector(QRViewController.scanQR(_:)))
+        let rightItem1 = UIBarButtonItem(title: "扫描", style: UIBarButtonItemStyle.plain, target: self, action: #selector(QRViewController.scanQR(_:)))
+        let rightItem2 = UIBarButtonItem(title: "扫描2", style: UIBarButtonItemStyle.plain, target: self, action: #selector(QRViewController.scanQR2(_:)))
+        navigationItem.rightBarButtonItems = [rightItem1, rightItem2]
 
-        view.backgroundColor = #colorLiteral(red: 0.4488613621, green: 1, blue: 0.5756808982, alpha: 1)
+        navigationItem.title = "二维码"
   
         textF.text = text
     }
@@ -54,16 +56,26 @@ class QRViewController: UIViewController {
     //二维码扫描
     func scanQR(_ sender: UIButton) {
         let vc = QRScanVC()
-        self.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
+    func scanQR2(_ sender: UIButton) {
+        let vc = QRCodeScanViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func recognizeQRCode(_ sender: UIButton) {
-        printLog(message: imgV.image)
-        
-        
-        let str = self.imgV.image?.recognizeQRCode()
-        
-        print(str!)
+
+        DispatchQueue.global().async {
+            let recognizeResult = self.imgV.image?.recognizeQRCode()
+            let result = recognizeResult?.characters.count > 0 ? recognizeResult : "无法识别"
+            DispatchQueue.main.async {
+                Tool.confirm(title: "扫描结果", message: result, controller: self)
+            }
+        }
+//        Tool.shared.choosePicture(self, editor: true) { [weak self] (image) in
+//            let vc2:RecognizeQRCodeViewController = RecognizeQRCodeViewController()
+//            vc2.sourceImage = image;
+//            self?.navigationController?.pushViewController(vc2, animated: true)
+//        }
     }
     
     @IBAction func chooseLogo(_ sender: UITapGestureRecognizer) {

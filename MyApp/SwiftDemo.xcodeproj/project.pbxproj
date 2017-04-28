@@ -10,6 +10,13 @@
 		91249EB01E9F4D7A00387E12 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91249EAF1E9F4D7A00387E12 /* BannerView.swift */; };
 		913D914D1EB07AAE00C4BDEE /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D914C1EB07AAE00C4BDEE /* Tool.swift */; };
 		913D91511EB0926500C4BDEE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D91501EB0926500C4BDEE /* Constant.swift */; };
+		91656FD51EB2FA40001018EF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91656FD21EB2FA40001018EF /* RootViewController.swift */; };
+		91656FD61EB2FA40001018EF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91656FD31EB2FA40001018EF /* TabBarController.swift */; };
+		91656FD71EB2FA40001018EF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91656FD41EB2FA40001018EF /* NavigationController.swift */; };
+		91656FD91EB315D2001018EF /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91656FD81EB315D2001018EF /* Mine.storyboard */; };
+		91656FDB1EB31A7B001018EF /* Mall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91656FDA1EB31A7B001018EF /* Mall.storyboard */; };
+		91656FDD1EB31AA3001018EF /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91656FDC1EB31AA3001018EF /* Root.storyboard */; };
+		91656FDF1EB326D7001018EF /* RecognizeQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91656FDE1EB326D7001018EF /* RecognizeQRCodeViewController.swift */; };
 		9194F7181EA9F09F00282954 /* Applist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9194F7141EA9F09F00282954 /* Applist.plist */; };
 		9194F7191EA9F09F00282954 /* AppListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F7151EA9F09F00282954 /* AppListCell.swift */; };
 		9194F71A1EA9F09F00282954 /* ApplistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F7161EA9F09F00282954 /* ApplistModel.swift */; };
@@ -17,15 +24,14 @@
 		9194F71F1EA9F10400282954 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F71C1EA9F10400282954 /* BannerCell.swift */; };
 		9194F7201EA9F10400282954 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F71D1EA9F10400282954 /* BannerModel.swift */; };
 		9194F7211EA9F10400282954 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9194F71E1EA9F10400282954 /* BannerView.xib */; };
-		91D0E61D1EAF1ABE00F4B3FB /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E61C1EAF1ABE00F4B3FB /* TabbarViewController.swift */; };
+		91C5FC6D1EB1987C00B22977 /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C5FC6C1EB1987C00B22977 /* QRCodeScanViewController.swift */; };
+		91C5FC701EB1CD5C00B22977 /* noticeMusic.caf in Resources */ = {isa = PBXBuildFile; fileRef = 91C5FC6F1EB1CD5C00B22977 /* noticeMusic.caf */; };
 		91D0E6211EAF1CCB00F4B3FB /* QRScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E61E1EAF1CCB00F4B3FB /* QRScanVC.swift */; };
 		91D0E6221EAF1CCB00F4B3FB /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E61F1EAF1CCB00F4B3FB /* String+QRCode.swift */; };
 		91D0E6231EAF1CCB00F4B3FB /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E6201EAF1CCB00F4B3FB /* UIImage+QRCode.swift */; };
 		91D0E6251EAF1DE300F4B3FB /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0E6241EAF1DE300F4B3FB /* QRViewController.swift */; };
 		91E368FA1DBF5C2200958A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E368F91DBF5C2200958A41 /* AppDelegate.swift */; };
-		91E368FF1DBF5C2200958A41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E368FD1DBF5C2200958A41 /* Main.storyboard */; };
 		91E369011DBF5C2200958A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E369001DBF5C2200958A41 /* Assets.xcassets */; };
-		91E369041DBF5C2200958A41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E369021DBF5C2200958A41 /* LaunchScreen.storyboard */; };
 		91F967B41EA9FB7900D6B5C6 /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967B31EA9FB7900D6B5C6 /* MallViewController.swift */; };
 		91F967B71EA9FBC400D6B5C6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967B61EA9FBC400D6B5C6 /* MyViewController.swift */; };
 		91F967B91EA9FEE200D6B5C6 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967B81EA9FEE200D6B5C6 /* NextViewController.swift */; };
@@ -41,6 +47,13 @@
 		91249EAF1E9F4D7A00387E12 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerView.swift; path = Banner/BannerView.swift; sourceTree = "<group>"; };
 		913D914C1EB07AAE00C4BDEE /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		913D91501EB0926500C4BDEE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		91656FD21EB2FA40001018EF /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		91656FD31EB2FA40001018EF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		91656FD41EB2FA40001018EF /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		91656FD81EB315D2001018EF /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		91656FDA1EB31A7B001018EF /* Mall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mall.storyboard; sourceTree = "<group>"; };
+		91656FDC1EB31AA3001018EF /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		91656FDE1EB326D7001018EF /* RecognizeQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeQRCodeViewController.swift; sourceTree = "<group>"; };
 		9194F7141EA9F09F00282954 /* Applist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Applist.plist; sourceTree = "<group>"; };
 		9194F7151EA9F09F00282954 /* AppListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppListCell.swift; sourceTree = "<group>"; };
 		9194F7161EA9F09F00282954 /* ApplistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplistModel.swift; sourceTree = "<group>"; };
@@ -48,16 +61,15 @@
 		9194F71C1EA9F10400282954 /* BannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerCell.swift; path = Banner/BannerCell.swift; sourceTree = "<group>"; };
 		9194F71D1EA9F10400282954 /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerModel.swift; path = Banner/BannerModel.swift; sourceTree = "<group>"; };
 		9194F71E1EA9F10400282954 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BannerView.xib; path = Banner/BannerView.xib; sourceTree = "<group>"; };
-		91D0E61C1EAF1ABE00F4B3FB /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		91C5FC6C1EB1987C00B22977 /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
+		91C5FC6F1EB1CD5C00B22977 /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noticeMusic.caf; sourceTree = "<group>"; };
 		91D0E61E1EAF1CCB00F4B3FB /* QRScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanVC.swift; sourceTree = "<group>"; };
 		91D0E61F1EAF1CCB00F4B3FB /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
 		91D0E6201EAF1CCB00F4B3FB /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
 		91D0E6241EAF1DE300F4B3FB /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		91E368F61DBF5C2200958A41 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E368F91DBF5C2200958A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91E368FE1DBF5C2200958A41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91E369001DBF5C2200958A41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		91E369031DBF5C2200958A41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91E369051DBF5C2200958A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91F967B31EA9FB7900D6B5C6 /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
 		91F967B61EA9FBC400D6B5C6 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +120,16 @@
 			name = Banner;
 			sourceTree = "<group>";
 		};
+		91656FD11EB2FA40001018EF /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91656FD21EB2FA40001018EF /* RootViewController.swift */,
+				91656FD31EB2FA40001018EF /* TabBarController.swift */,
+				91656FD41EB2FA40001018EF /* NavigationController.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
 		9194F7121EA9F09F00282954 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +143,7 @@
 		9194F7131EA9F09F00282954 /* RootViewController(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				91656FDC1EB31AA3001018EF /* Root.storyboard */,
 				9194F7141EA9F09F00282954 /* Applist.plist */,
 				9194F7151EA9F09F00282954 /* AppListCell.swift */,
 				9194F7161EA9F09F00282954 /* ApplistModel.swift */,
@@ -152,8 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				91E368F91DBF5C2200958A41 /* AppDelegate.swift */,
-				91D0E61C1EAF1ABE00F4B3FB /* TabbarViewController.swift */,
-				91F967C21EAA04EA00D6B5C6 /* Storyboard */,
+				91656FD11EB2FA40001018EF /* RootViewController */,
 				9194F7121EA9F09F00282954 /* ViewController */,
 				91F967C31EAA055300D6B5C6 /* Function(功能) */,
 				91F967BA1EAA03FF00D6B5C6 /* ConmonTools */,
@@ -168,6 +190,7 @@
 		91F967B21EA9FB7900D6B5C6 /* MallViewController(商城) */ = {
 			isa = PBXGroup;
 			children = (
+				91656FDA1EB31A7B001018EF /* Mall.storyboard */,
 				91F967B81EA9FEE200D6B5C6 /* NextViewController.swift */,
 				91F967B31EA9FB7900D6B5C6 /* MallViewController.swift */,
 			);
@@ -178,6 +201,7 @@
 		91F967B51EA9FBC400D6B5C6 /* MineViewController(我的) */ = {
 			isa = PBXGroup;
 			children = (
+				91656FD81EB315D2001018EF /* Mine.storyboard */,
 				91F967B61EA9FBC400D6B5C6 /* MyViewController.swift */,
 			);
 			name = "MineViewController(我的)";
@@ -203,15 +227,6 @@
 			path = HTML;
 			sourceTree = "<group>";
 		};
-		91F967C21EAA04EA00D6B5C6 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				91E368FD1DBF5C2200958A41 /* Main.storyboard */,
-				91E369021DBF5C2200958A41 /* LaunchScreen.storyboard */,
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
 		91F967C31EAA055300D6B5C6 /* Function(功能) */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,8 +239,11 @@
 		91F967C41EAA057500D6B5C6 /* QRViewController(二维码) */ = {
 			isa = PBXGroup;
 			children = (
+				91C5FC6F1EB1CD5C00B22977 /* noticeMusic.caf */,
 				91D0E6241EAF1DE300F4B3FB /* QRViewController.swift */,
 				91D0E61E1EAF1CCB00F4B3FB /* QRScanVC.swift */,
+				91C5FC6C1EB1987C00B22977 /* QRCodeScanViewController.swift */,
+				91656FDE1EB326D7001018EF /* RecognizeQRCodeViewController.swift */,
 				91D0E61F1EAF1CCB00F4B3FB /* String+QRCode.swift */,
 				91D0E6201EAF1CCB00F4B3FB /* UIImage+QRCode.swift */,
 			);
@@ -298,11 +316,13 @@
 			files = (
 				9194F7211EA9F10400282954 /* BannerView.xib in Resources */,
 				9194F7181EA9F09F00282954 /* Applist.plist in Resources */,
-				91E369041DBF5C2200958A41 /* LaunchScreen.storyboard in Resources */,
+				91C5FC701EB1CD5C00B22977 /* noticeMusic.caf in Resources */,
+				91656FD91EB315D2001018EF /* Mine.storyboard in Resources */,
 				91F967C01EAA044100D6B5C6 /* index.html in Resources */,
 				91E369011DBF5C2200958A41 /* Assets.xcassets in Resources */,
 				91F967C11EAA044100D6B5C6 /* message.html in Resources */,
-				91E368FF1DBF5C2200958A41 /* Main.storyboard in Resources */,
+				91656FDB1EB31A7B001018EF /* Mall.storyboard in Resources */,
+				91656FDD1EB31AA3001018EF /* Root.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,45 +383,30 @@
 			files = (
 				9194F71A1EA9F09F00282954 /* ApplistModel.swift in Sources */,
 				91F967B91EA9FEE200D6B5C6 /* NextViewController.swift in Sources */,
+				91656FD51EB2FA40001018EF /* RootViewController.swift in Sources */,
 				913D914D1EB07AAE00C4BDEE /* Tool.swift in Sources */,
 				91D0E6211EAF1CCB00F4B3FB /* QRScanVC.swift in Sources */,
 				91D0E6251EAF1DE300F4B3FB /* QRViewController.swift in Sources */,
 				91249EB01E9F4D7A00387E12 /* BannerView.swift in Sources */,
+				91656FD71EB2FA40001018EF /* NavigationController.swift in Sources */,
+				91C5FC6D1EB1987C00B22977 /* QRCodeScanViewController.swift in Sources */,
+				91656FD61EB2FA40001018EF /* TabBarController.swift in Sources */,
 				9194F7191EA9F09F00282954 /* AppListCell.swift in Sources */,
 				9194F7201EA9F10400282954 /* BannerModel.swift in Sources */,
 				91E368FA1DBF5C2200958A41 /* AppDelegate.swift in Sources */,
 				91D0E6231EAF1CCB00F4B3FB /* UIImage+QRCode.swift in Sources */,
-				91D0E61D1EAF1ABE00F4B3FB /* TabbarViewController.swift in Sources */,
 				913D91511EB0926500C4BDEE /* Constant.swift in Sources */,
 				91D0E6221EAF1CCB00F4B3FB /* String+QRCode.swift in Sources */,
 				9194F71B1EA9F09F00282954 /* ViewController.swift in Sources */,
 				91F967B41EA9FB7900D6B5C6 /* MallViewController.swift in Sources */,
 				91F967B71EA9FBC400D6B5C6 /* MyViewController.swift in Sources */,
+				91656FDF1EB326D7001018EF /* RecognizeQRCodeViewController.swift in Sources */,
 				9194F71F1EA9F10400282954 /* BannerCell.swift in Sources */,
 				91F967BC1EAA03FF00D6B5C6 /* MyLike.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		91E368FD1DBF5C2200958A41 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91E368FE1DBF5C2200958A41 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		91E369021DBF5C2200958A41 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91E369031DBF5C2200958A41 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		91E369061DBF5C2200958A41 /* Debug */ = {
@@ -445,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -489,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

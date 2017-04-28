@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B0C-eE-Efw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My View Controller-->
+        <scene sceneID="vXp-br-qwG">
+            <objects>
+                <viewController id="J9p-w0-vgc" customClass="MyViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K6V-4K-znt"/>
+                        <viewControllerLayoutGuide type="bottom" id="YUb-bO-yZC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="smx-hh-38h">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nqt-aI-GRh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-gZ-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224" y="510"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="YhX-bu-YTC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0C-eE-Efw" customClass="NavigationController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="item2_1" selectedImage="item2_1" id="z5Z-GF-361"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
+                        <color key="tintColor" red="0.6980247300924195" green="1" blue="0.97275099209066729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6O1-je-54F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J9p-w0-vgc" kind="relationship" relationship="rootViewController" id="3wL-nM-yDd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ams-80-peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713" y="510"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="item2_1" width="30" height="30"/>
+    </resources>
+</document>

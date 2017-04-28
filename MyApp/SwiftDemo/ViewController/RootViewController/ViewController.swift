@@ -14,7 +14,7 @@ import SwiftyJSON
 private let AppListCellID = "AppListCell"
 private let BannerCellID = "BannerCell"
 
-class ViewController: UIViewController,UIScrollViewDelegate,BannerViewDelegate {
+class ViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate {
 
     lazy var cycleModels : [BannerModel] = [BannerModel]()
     lazy var applistModels: [ApplistModel] = [ApplistModel]()
@@ -55,22 +55,6 @@ class ViewController: UIViewController,UIScrollViewDelegate,BannerViewDelegate {
         printLog(message: applistArray)
         
         
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // 2、设置导航栏标题属性：设置标题颜色
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
-        // 3、设置导航栏前景色：设置item指示色
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        // 4、设置导航栏半透明
-//        self.navigationController?.navigationBar.isTranslucent = true
-        // 5、设置导航栏背景图片
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        // 6、设置导航栏阴影图片
-        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     func getBannerView(frame: CGRect) -> BannerView {

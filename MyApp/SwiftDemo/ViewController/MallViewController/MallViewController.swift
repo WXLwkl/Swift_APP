@@ -10,7 +10,7 @@ import UIKit
 
 import WebKit
 
-class MallViewController: UIViewController, WKNavigationDelegate {
+class MallViewController: RootViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()

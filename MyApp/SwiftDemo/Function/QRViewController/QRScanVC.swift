@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 private let scanAnimationDuration = 2.0//扫描时长
 
-class QRScanVC: UIViewController {
+class QRScanVC: RootViewController {
 
     
     var scanPane: UIImageView!///扫描框
@@ -35,15 +35,6 @@ class QRScanVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.white
-        
-        let myButton = UIButton(type: UIButtonType.custom)
-        myButton.frame = CGRect(x: 10, y: 30, width: 30, height: 30)
-
-        myButton.addTarget(self, action: #selector(QRScanVC.dismiss as (QRScanVC) -> () -> ()), for: UIControlEvents.touchUpInside)
-        myButton.setBackgroundImage(UIImage(named: "ocrBack"), for: UIControlState())
-        self.view.addSubview(myButton)
         
         initSubViews()
         setupScanSession()
@@ -59,14 +50,18 @@ class QRScanVC: UIViewController {
 //MARK: - SubViews
     private func initSubViews() {
         
+        navigationItem.title = "扫一扫"
+        
         scanPane = UIImageView.init(image: UIImage.init(named: "QRCode_ScanBox"))
-        scanPane.bounds = CGRect(x: 0, y: 0, width: 260, height: 260)
-        scanPane.center = view.center
+        scanPane.frame = CGRect(x: 50, y: 120, width: kScreenWidth-100, height: kScreenWidth-100)
+
         self.view.addSubview(scanPane)
 
+//        绘制模糊区域
+        fuzzyArea(rect: scanPane.frame)
         
         let label: UILabel = UILabel.init()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .center
         label.text = "将取景框对准二维/条形码，即可自动扫描"
@@ -81,45 +76,57 @@ class QRScanVC: UIViewController {
         initBottomView()
         view.layoutIfNeeded()
         scanPane.addSubview(scanLine)
+
+    }
+//MARK: - 绘制模糊区域
+    private func fuzzyArea(rect: CGRect) {
+        let minX = rect.minX
+        let maxX = rect.maxX
+        let minY = rect.minY
+        let maxY = rect.maxY
         
+        creacteFuzzyArea(rect: CGRect(x: 0, y: 0, width: kScreenWidth, height: minY))
+        creacteFuzzyArea(rect: CGRect(x: 0, y: minY, width: minX, height: maxY-minY))
+        creacteFuzzyArea(rect: CGRect(x: maxX, y: minY, width: kScreenWidth-maxX, height: maxY-minY))
+        creacteFuzzyArea(rect: CGRect(x: 0, y: maxY, width: kScreenWidth, height: kScreenHeight-maxY))
         
     }
+    private func creacteFuzzyArea(rect: CGRect) {
 
+        let view = UIView(frame: rect)
+        view.backgroundColor = .black
+        view.alpha = 0.4
+        self.view.addSubview(view)
+    }
+    
+    
     private func initBottomView() {
         bottomView = {
-            let tempbottomView = UIView.init(frame: CGRect(x: 0, y: kScreenHeight-kNavbarHeight-20, width: kScreenWidth, height: 2 * kNavbarHeight))
+            let tempbottomView = UIView.init(frame: CGRect(x: 0, y: kScreenHeight-kNavbarHeight-20, width: kScreenWidth, height: 20 + kNavbarHeight))
             tempbottomView.backgroundColor = kThemeColor
-            view.addSubview(tempbottomView)
+            self.view.addSubview(tempbottomView)
             return tempbottomView
         }()
         
         let imageViewWidth:CGFloat = kScreenWidth/3
         for index in 0...3 {
-            let imageView = UIImageView.init()
-            imageView.tintColor = UIColor.white
-            imageView.isUserInteractionEnabled = true
-            imageView.frame = CGRect(x: imageViewWidth * CGFloat(index), y: 10, width: imageViewWidth, height: ((bottomView?.frame.size.height)!/2))
-            
-            if index == 0 {
-                imageView.image = UIImage.init(named: "qrcode_scan_btn_photo_nor")
-                
-            } else if index == 1 {
-                imageView.image = UIImage.init(named: "qrcode_scan_btn_flash_nor")
-                
-            }else if index == 2 {
-                imageView.image = UIImage.init(named: "qrcode_scan_btn_myqrcode_nor")
-                
-            }
-            
-            imageView.contentMode = .center;
-            
-            let button: UIButton = UIButton.init()
-            button.frame = CGRect(x: 0, y: 0, width: imageViewWidth, height: imageView.frame.size.height)
+
+            let button: UIButton = UIButton(type: .custom)
+            button.contentMode = .center
+            button.frame = CGRect(x: imageViewWidth * CGFloat(index), y: 5, width: imageViewWidth, height: (bottomView?.frame.size.height)!-10)
             button.backgroundColor = UIColor.clear
             button.addTarget(self, action: #selector(bottomBtnClick(sender:)), for: .touchUpInside)
             button.tag = index
-            imageView.addSubview(button)
-            bottomView?.addSubview(imageView)
+            bottomView?.addSubview(button)
+            
+            if index == 0 {
+                button.setImage(UIImage(named: "qrcode_scan_btn_photo_nor"), for: UIControlState.normal)
+            } else if index == 1 {
+                button.setImage(UIImage(named: "qrcode_scan_btn_flash_nor"), for: UIControlState.normal)
+                button.setImage(UIImage(named: "qrcode_scan_btn_scan_off"), for: UIControlState.selected)
+            }else if index == 2 {
+                button.setImage(UIImage(named: "qrcode_scan_btn_myqrcode_nor"), for: UIControlState.normal)
+            }
             
         }
     }

@@ -9,13 +9,10 @@
 import UIKit
 import WebKit
 
-class NextViewController: UIViewController,WKNavigationDelegate {
+class NextViewController: RootViewController,WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.view.backgroundColor = .red
         
         let screenSize = UIScreen.main.bounds.size
         let frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height);

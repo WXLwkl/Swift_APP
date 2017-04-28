@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hbB-I5-xiX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hng-sW-IBm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,14 +41,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_qrIcon" translatesAutoresizingMaskIntoConstraints="NO" id="efI-mA-9Ou">
-                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="143"/>
+                                                    <rect key="frame" x="10" y="10" width="258" height="133"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里显示功能" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-tY-Jli">
                                                     <rect key="frame" x="0.0" y="143" width="278" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Yt3-QX-4lt"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -56,10 +56,10 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="efI-mA-9Ou" firstAttribute="leading" secondItem="GNx-Od-9B3" secondAttribute="leading" id="00r-MK-BNH"/>
+                                            <constraint firstItem="efI-mA-9Ou" firstAttribute="leading" secondItem="GNx-Od-9B3" secondAttribute="leading" constant="10" id="00r-MK-BNH"/>
                                             <constraint firstItem="dPp-tY-Jli" firstAttribute="leading" secondItem="GNx-Od-9B3" secondAttribute="leading" id="8Cr-vH-s9f"/>
-                                            <constraint firstItem="efI-mA-9Ou" firstAttribute="top" secondItem="GNx-Od-9B3" secondAttribute="top" id="FkX-Wp-Hdt"/>
-                                            <constraint firstAttribute="trailing" secondItem="efI-mA-9Ou" secondAttribute="trailing" id="MeQ-2K-ySg"/>
+                                            <constraint firstItem="efI-mA-9Ou" firstAttribute="top" secondItem="GNx-Od-9B3" secondAttribute="top" constant="10" id="FkX-Wp-Hdt"/>
+                                            <constraint firstAttribute="trailing" secondItem="efI-mA-9Ou" secondAttribute="trailing" constant="10" id="MeQ-2K-ySg"/>
                                             <constraint firstAttribute="trailing" secondItem="dPp-tY-Jli" secondAttribute="trailing" id="mNq-nr-gaX"/>
                                             <constraint firstItem="dPp-tY-Jli" firstAttribute="top" secondItem="efI-mA-9Ou" secondAttribute="bottom" id="qkL-HA-fL9"/>
                                             <constraint firstAttribute="bottom" secondItem="dPp-tY-Jli" secondAttribute="bottom" id="quy-yh-c6e"/>
@@ -217,109 +217,15 @@
             </objects>
             <point key="canvasLocation" x="888.79999999999995" y="-1023.2383808095952"/>
         </scene>
-        <!--My View Controller-->
-        <scene sceneID="vXp-br-qwG">
-            <objects>
-                <viewController id="J9p-w0-vgc" customClass="MyViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K6V-4K-znt"/>
-                        <viewControllerLayoutGuide type="bottom" id="YUb-bO-yZC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="smx-hh-38h">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Nqt-aI-GRh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-gZ-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-240" y="525"/>
-        </scene>
-        <!--Mall View Controller-->
-        <scene sceneID="kbe-px-m4u">
-            <objects>
-                <viewController id="sxY-28-3Du" customClass="MallViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Id-i7-F2p"/>
-                        <viewControllerLayoutGuide type="bottom" id="TOD-wg-gK1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6md-5o-XaJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9vN-Ur-SjO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7NJ-e4-2XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="124" y="-197.45127436281859"/>
-        </scene>
-        <!--Tabbar View Controller-->
-        <scene sceneID="fmq-4x-aGI">
-            <objects>
-                <tabBarController id="hbB-I5-xiX" customClass="TabbarViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ODf-co-fpb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.8351417544310854" green="0.89560592169999997" blue="0.19514113667137373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.6980247300924195" green="1" blue="0.97275099209066729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="0.037429042760000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Hng-sW-IBm" kind="relationship" relationship="viewControllers" id="hNt-hf-Wfz"/>
-                        <segue destination="a5a-pr-19e" kind="relationship" relationship="viewControllers" id="Xcq-Jg-itP"/>
-                        <segue destination="B0C-eE-Efw" kind="relationship" relationship="viewControllers" id="SLg-cg-iiA"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9v-yH-8re" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3030" y="9"/>
-        </scene>
-        <!--我的-->
-        <scene sceneID="YhX-bu-YTC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0C-eE-Efw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="item2_1" selectedImage="item2_1" id="z5Z-GF-361"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="6O1-je-54F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J9p-w0-vgc" kind="relationship" relationship="rootViewController" id="3wL-nM-yDd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ams-80-peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-713" y="510"/>
-        </scene>
-        <!--商城-->
-        <scene sceneID="BNK-e5-SUs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5a-pr-19e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="商城" image="item1_1" id="SWe-vb-ZDR"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJc-Hh-CRe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sxY-28-3Du" kind="relationship" relationship="rootViewController" id="R7x-pp-heW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0HW-AL-nNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-815.20000000000005" y="-197.45127436281859"/>
-        </scene>
         <!--应用-->
         <scene sceneID="T9Z-Jq-494">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hng-sW-IBm" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hng-sW-IBm" customClass="NavigationController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="应用" image="item0_1" id="j8i-up-MF7"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
+                        <color key="tintColor" red="0.6980247300924195" green="1" blue="0.97275099209066729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </simulatedTabBarMetrics>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PsS-Oy-rI3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -338,7 +244,5 @@
         <image name="2" width="200" height="200"/>
         <image name="app_qrIcon" width="50" height="50"/>
         <image name="item0_1" width="30" height="30"/>
-        <image name="item1_1" width="30" height="30"/>
-        <image name="item2_1" width="30" height="30"/>
     </resources>
 </document>
