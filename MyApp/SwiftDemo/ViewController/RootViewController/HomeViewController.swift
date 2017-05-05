@@ -14,7 +14,7 @@ import SwiftyJSON
 private let AppListCellID = "AppListCell"
 private let BannerCellID = "BannerCell"
 
-class ViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate {
+class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate {
 
     lazy var cycleModels : [BannerModel] = [BannerModel]()
     lazy var applistModels: [ApplistModel] = [ApplistModel]()
@@ -29,13 +29,13 @@ class ViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate
         super.viewDidLoad()
         
         navigationItem.title = "首页"
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(HomeViewController.add(_:)))
         
         let bannerArr = [
             ["imageUrl":"pic1","title":"xingl","url":"https://www.baidu.com"],
-            ["imageUrl":"http://c.hiphotos.baidu.com/image/pic/item/b58f8c5494eef01f50d40bbee5fe9925bd317d8c.jpg","title":"无限轮播","url":"https://www.baidu.com"],
+            ["imageUrl":"http://c.hiphotos.baidu.com/image/pic/item/b58f8c5494eef01f50d40bbee5fe9925bd317d8c.jpg","title":"iOS开发","url":"https://www.baidu.com"],
             ["imageUrl":"pic2","title":"QQ：935858549","url":"https://www.baidu.com"],
-            ["imageUrl":"pic3","title":"iOS开发","url":"https://www.baidu.com"],
+            ["imageUrl":"pic3","title":"无限轮播","url":"https://www.baidu.com"],
             ["imageUrl":"pic4","title":"帅的人已经Star","url":"https://www.baidu.com"]
         ]
         
@@ -55,6 +55,43 @@ class ViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate
         printLog(message: applistArray)
         
         
+    }
+    // 菜单
+    weak var popMenu: LXFPopMenu?
+    
+    func add(_ item: UIBarButtonItem) {
+        printLog(message: "AAA")
+        
+            var popMenuItems: [LXFPopMenuItem] = [LXFPopMenuItem]()
+            for i in 0..<4 {
+                var image: UIImage!
+                var title: String!
+                switch i {
+                case 0:
+                    image = UIImage()
+                    title = "发起群聊"
+                case 1:
+                    image = UIImage()
+                    title = "添加朋友"
+                case 2:
+                    image = UIImage()
+                    title = "扫一扫"
+                case 3:
+                    image = UIImage()
+                    title = "收付款"
+                default: break
+                }
+                let popMenuItem = LXFPopMenuItem(image: image, title: title)
+                popMenuItems.append(popMenuItem)
+            }
+            self.popMenu = LXFPopMenu(menus: popMenuItems)
+            // 弹出菜单
+            popMenu?.showMenu(on: self.view, at: CGPoint.zero)
+            popMenu?.popMenuDidSelectedBlock = { (index, menuItem) in
+                printLog(message: ("\(index), \(menuItem)"))
+            }
+        
+
     }
     
     func getBannerView(frame: CGRect) -> BannerView {
@@ -83,7 +120,7 @@ class ViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate
 }
 
 //MARK: - UICollectionViewDataSource
-extension ViewController : UICollectionViewDataSource {
+extension HomeViewController : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -122,7 +159,7 @@ extension ViewController : UICollectionViewDataSource {
     }
 }
 //MARK: - UICollectionViewDelegate
-extension ViewController: UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         switch indexPath.row {
@@ -142,6 +179,7 @@ extension ViewController: UICollectionViewDelegate {
         
     }
     
+//MARK: - storyboard传值
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard segue.identifier == "QRSegue" else {
@@ -210,7 +248,7 @@ func VCSTRING_TO_VIEWCONTROLLER(_ childControllerName: String) -> UIViewControll
 
 
 //MARK: - UICollectionViewDelegateFlowLayout
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //item的大小

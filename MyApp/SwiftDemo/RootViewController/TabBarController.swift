@@ -14,13 +14,31 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         super.viewDidLoad()
 
         self.delegate = self as UITabBarControllerDelegate
-        
+
         self.tabBar.isTranslucent = false  //避免受默认的半透明色影响，关闭
 //        设置选中颜色
         self.tabBar.tintColor = UIColor(red: 0/255, green:186/255, blue:255/255, alpha:1)
-        self.selectedIndex = 0;
-        
+        self.selectedIndex = 1;
+//
         addChildViewControllers()
+
+//        let recentVC = RecentViewController()
+//        let contactVC = ContactViewController()
+//        let spaceVC = SpaceViewController()
+//        
+//        let recentNav = NavigationController(rootViewController: recentVC)
+//        let contactNav = NavigationController(rootViewController: contactVC)
+//        let spaceNav = NavigationController(rootViewController: spaceVC)
+//        
+//        var controllers = [recentNav, contactNav]
+//        controllers.append(spaceNav)
+//        self.viewControllers = controllers
+//        
+//        recentNav.tabBarItem = UITabBarItem(title: "消息", image: UIImage(named: "message"), tag: 1)
+//        contactNav.tabBarItem = UITabBarItem(title: "联系人", image: UIImage(named: "contactIcon"), tag: 2)
+//        spaceNav.tabBarItem = UITabBarItem(title: "动态", image: UIImage(named: "star"), tag: 2)
+        
+        
     }
     
     private func addChildViewControllers() {

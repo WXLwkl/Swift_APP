@@ -1,26 +1,21 @@
 //
-//  RootViewController.swift
+//  SettingViewController.swift
 //  SwiftDemo
 //
-//  Created by xingl on 2017/4/28.
+//  Created by xingl on 2017/5/2.
 //  Copyright © 2017年 yjpal. All rights reserved.
 //
 
 import UIKit
 
-class RootViewController: UIViewController {
+class SettingViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = kBackGroundColor
-        
+        // Do any additional setup after loading the view.
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        UIApplication.shared.statusBarStyle = .lightContent
-//    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

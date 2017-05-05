@@ -25,7 +25,7 @@ import UIKit
 extension String {
     
     
-    
+//MARK: - 黑白普通二维码(大小为300)
     /**
      1.生成二维码
      
@@ -39,7 +39,7 @@ extension String {
         
     }
     
-    
+//MARK: - 生成带大小参数的黑白普通二维码
     /**
      2.生成二维码
      
@@ -54,7 +54,7 @@ extension String {
         
     }
     
-    
+//MARK: - 生成带Logo二维码(大小:300)
     /**
      3.生成二维码
      
@@ -70,6 +70,7 @@ extension String {
     }
     
     
+//MARK: - 生成大小和Logo的二维码
     /**
      4.生成二维码
      
@@ -88,7 +89,8 @@ extension String {
         
     }
     
-    
+
+//MARK: - 带Logo、颜色二维码
     /**
      5.生成二维码
      
@@ -113,6 +115,7 @@ extension String {
     }
     
     
+//MARK: - 自定义二维码
     /**
      6.生成二维码
      
@@ -162,6 +165,7 @@ extension String {
     }
     
     
+//MARK: - CIImage
     /**
      7.生成CIImage
      
@@ -171,7 +175,7 @@ extension String {
      
      - returns: CIImage
      */
-    func generateCIImage(size:CGFloat?,color:UIColor?,bgColor:UIColor?) -> CIImage
+    private func generateCIImage(size:CGFloat?,color:UIColor?,bgColor:UIColor?) -> CIImage
     {
         
         //1.缺省值

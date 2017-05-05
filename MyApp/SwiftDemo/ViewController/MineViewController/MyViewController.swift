@@ -11,19 +11,41 @@ import UIKit
 
 class MyViewController: RootViewController {
 
+    var searchController: UISearchController?
+    
+    // tableView
+    lazy var tableView: UITableView = { [unowned self] in
+        let tableView = UITableView(frame: self.view.bounds, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 44.0
+        tableView.showsVerticalScrollIndicator = false
+        tableView.contentInset = UIEdgeInsetsMake(64, 0, 44, 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 44, 0)
+        tableView.separatorInset = UIEdgeInsetsMake(0, 8, 0, 0)
+        tableView.tableFooterView = UIView()
+        // 注册cellID
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ID")
+        return tableView
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "个人中心"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(MyViewController.addBtnclick(_:)))
         
         
-        let label = UILabel(frame: CGRect(x: 0, y: 2, width: view.bounds.width, height: 50))
-        label.text = "AAA"
-        label.backgroundColor = #colorLiteral(red: 0.4488613621, green: 1, blue: 0.5756808982, alpha: 1)
-        label.textAlignment = .center
-        view.addSubview(label)
+        automaticallyAdjustsScrollViewInsets = false
         
+        // 搜索控制器
+        let searchResultVC = RootViewController()
+        searchResultVC.view.backgroundColor = UIColor.red
+        let searchController = LXFSearchController(searchResultsController: searchResultVC)
+        self.searchController = searchController
+        
+        // 添加tableView
+        tableView.tableHeaderView = searchController.searchBar
+        view.addSubview(self.tableView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,10 +54,14 @@ class MyViewController: RootViewController {
     }
     
     
-    
-    func addBtnclick(_ item: UIBarButtonItem) {
+    @IBAction func settingClick(_ sender: UIBarButtonItem) {
         appInfo()
+        let vc = UIStoryboard(name: "Setting", bundle: nil)
+            .instantiateInitialViewController() as! SettingViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
     
 // TODO: - 设备信息
     func appInfo() -> Void {
@@ -50,8 +76,10 @@ class MyViewController: RootViewController {
         let info = mainBundle.infoDictionary
         let bundleId = mainBundle.object(forInfoDictionaryKey: "CFBundleName")
         let version = mainBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString")
-        print("[identifier]:\(identifier)")
-        print("[info]:\(info)")
+//        print("[identifier]:\(identifier)")
+        print("[identifier]:\(String(describing: identifier))")
+//        print("[info]:\(info)")
+        print("[info]:\(String(describing: info))")
         print("[bundleId]:\(bundleId!)")
         print("[version]:\(version!)")
     }
@@ -68,4 +96,24 @@ class MyViewController: RootViewController {
     }
     */
 
+}
+
+// MARK:- UITableViewDataSource
+extension MyViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ID")
+        
+        cell?.textLabel?.text = "\(indexPath.row)"
+        
+        return cell!;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

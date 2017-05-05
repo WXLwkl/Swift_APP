@@ -17,11 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow.init()
-        let tabBarController = TabBarController.init()
-        window?.rootViewController = tabBarController
+        window?.rootViewController = ViewController()
+        window?.backgroundColor = .white
         window?.makeKeyAndVisible()
-        
-        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }

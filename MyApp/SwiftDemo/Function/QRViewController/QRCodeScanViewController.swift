@@ -215,37 +215,47 @@ extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
         clearLayers()
 //         2.拿到扫描到的数据
-//        guard let metadata = metadataObjects.last as? AVMetadataObject else{ return }
+        guard let metadata = metadataObjects.last as? AVMetadataObject else{ return }
 //         通过预览图层将corners值转换为我们能识别的类型
-//        let objc = previewLayer.transformedMetadataObject(for: metadata)
+        let objc = previewLayer.transformedMetadataObject(for: metadata)
         // 3.对扫描到的二维码进行描边
-//        drawLines(objc: objc as! AVMetadataMachineReadableCodeObject)
+        drawLines(objc: objc as! AVMetadataMachineReadableCodeObject)
     }
 //    绘制描边
     private func drawLines(objc: AVMetadataMachineReadableCodeObject) {
-//        1、安全校验
-        guard let array = objc.corners else { return  }
-//        2、创建图层，用于保存绘制的矩形
+
+        // result.corners:是数据坐标,必须使用预览图层将坐标转为位(上下文)的坐标
+        guard let resultObj = previewLayer.transformedMetadataObject(for: objc) as? AVMetadataMachineReadableCodeObject else {return}
+        
+        
+        ////        2、创建图层，用于保存绘制的矩形
         let layer = CAShapeLayer()
         layer.lineWidth = 2
         layer.strokeColor = UIColor.green.cgColor
-        layer.fillColor = UIColor.gray.cgColor
+        layer.fillColor = UIColor.clear.cgColor
         
-//        3、创建UIBezierPath，绘制矩形
+        
+        
+        // 创建UIBezierPath，绘制矩形
         let path = UIBezierPath()
-        var point = CGPoint(x: 0, y: 0)
         var index = 0
-        index += 1
-        
-//        CGPoint(dictionaryRepresentation: array[index] as! CFDictionary)!
-//        3、1将起点移动到某一点
-        path.move(to: point)
-//        3、2连接其他线段
-        while index < array.count {
-            index += 1
-            point = CGPoint(dictionaryRepresentation: array[index] as! CFDictionary)!
-            path.addLine(to: point)
+        for corner in resultObj.corners {
+            
+            let dictCF = corner as! CFDictionary
+            let point = CGPoint(dictionaryRepresentation: dictCF)!
+            
+            // 开始绘制
+            if index == 0 {
+                path.move(to: point)
+            } else {
+                path.addLine(to: point)
+            }
+            
+            index = index + 1
         }
+        
+        
+
 //        3、3关闭路径
         path.close()
         
@@ -262,66 +272,3 @@ extension QRCodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

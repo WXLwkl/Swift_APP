@@ -27,6 +27,13 @@ class MallViewController: RootViewController, WKNavigationDelegate {
 
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 设置状态栏颜色
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.navigationItem.title = webView.title
         
