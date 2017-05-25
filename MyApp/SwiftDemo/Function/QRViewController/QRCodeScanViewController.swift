@@ -44,12 +44,12 @@ class QRCodeScanViewController: RootViewController {
         navigationItem.rightBarButtonItem = rightItem
         
 //        扫描容器
-        customContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth-100, height: kScreenWidth-100))
+        customContainerView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW-100, height: kScreenW-100))
         customContainerView.center = view.center
         customContainerView.clipsToBounds = true
         view.addSubview(customContainerView)
         
-        customLabel = UILabel(frame: CGRect(x: 0, y: kNavbarHeight+20, width: kScreenWidth, height: 80))
+        customLabel = UILabel(frame: CGRect(x: 0, y: kNavbarHeight+20, width: kScreenW, height: 80))
         customLabel.textColor = UIColor.red
         customLabel.numberOfLines = 0
         customLabel.textAlignment = NSTextAlignment.center
@@ -64,7 +64,7 @@ class QRCodeScanViewController: RootViewController {
         scanLineImageView.image = UIImage(named: "qrcode_scanline_qrcode")
         borderImageView.addSubview(scanLineImageView)
         
-        customTabbar = UITabBar(frame: CGRect(x: 0, y: UIScreen.main.bounds.height-49, width: kScreenWidth, height: kTabBarHeight))
+        customTabbar = UITabBar(frame: CGRect(x: 0, y: UIScreen.main.bounds.height-49, width: kScreenW, height: kTabBarHeight))
         customTabbar.delegate = self
         customTabbar.backgroundColor = .red
         customTabbar.barTintColor = UIColor.red
@@ -84,7 +84,7 @@ class QRCodeScanViewController: RootViewController {
             imagePickerVC.delegate = self
             imagePickerVC.allowsEditing = true
             present(imagePickerVC, animated: true) {
-                printLog(message: "completion")
+                printLog("completion")
             }
         }
     }
@@ -166,7 +166,7 @@ extension QRCodeScanViewController: UINavigationControllerDelegate, UIImagePicke
             let results = detector?.features(in: ciImage)
 //            2、3取出探测到的数据
             for result in results! {
-                printLog(message: (result as! CIQRCodeFeature).messageString)
+                printLog((result as! CIQRCodeFeature).messageString)
                 customLabel.text = (result as! CIQRCodeFeature).messageString
             }
         } else {

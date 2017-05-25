@@ -22,7 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nqt-aI-GRh"/>
+                    <navigationItem key="navigationItem" id="Nqt-aI-GRh">
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="AXF-ZS-eBr">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="settingClick:" destination="J9p-w0-vgc" id="I8M-iB-y9x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-gZ-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,5 +60,6 @@
     </scenes>
     <resources>
         <image name="item2_1" width="30" height="30"/>
+        <image name="setting" width="30" height="30"/>
     </resources>
 </document>

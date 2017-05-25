@@ -8,6 +8,8 @@
 		<key>title</key>
 		<string>二维码</string>
 		<key>vc</key>
+		<string>QRSegue</string>
+		<key>vc - 2</key>
 		<string>QRViewController</string>
 	</dict>
 	<dict>
@@ -16,23 +18,23 @@
 		<key>title</key>
 		<string>微信</string>
 		<key>vc</key>
-		<string>WechatViewController</string>
-	</dict>
-	<dict>
-		<key>image</key>
-		<string></string>
-		<key>title</key>
-		<string></string>
-		<key>vc</key>
 		<string></string>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string></string>
+		<string>2</string>
 		<key>title</key>
-		<string></string>
+		<string>联动</string>
 		<key>vc</key>
-		<string></string>
+		<string>LinkageSegue</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>searchbutton_nor</string>
+		<key>title</key>
+		<string>发现</string>
+		<key>vc</key>
+		<string>findSegue</string>
 	</dict>
 	<dict>
 		<key>image</key>

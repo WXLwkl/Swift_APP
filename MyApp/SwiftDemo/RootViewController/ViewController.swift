@@ -70,10 +70,10 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
             
             switch state {
             case .began:
-                printLog(message: "---- began")
+                printLog("---- began")
 
             case .changed:
-                printLog(message: "---- changed")
+                printLog("---- changed")
                 if velocityx < -80 {
                     
                     dismissSlideMenu()
@@ -104,14 +104,14 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
                     }
                 }
             case .ended:
-                printLog(message: "---- ended")
+                printLog("---- ended")
                 if recongnizer.view!.center.x < kScreenW * (5/6) {
                     dismissSlideMenu()
                 } else {
                     presentSlideMenu()
                 }
             default:
-                printLog(message: "异常滑动")
+                printLog("异常滑动")
             }
             
             
@@ -124,7 +124,7 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
         let currentPressPoint = tapGesture.location(in: self.view)
         
         if availableArea.contains(currentPressPoint) {
-            printLog(message: "SlideMenu该出现了")
+            printLog("SlideMenu该出现了")
             UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
                 self.createAvailableArea(kScreenW/6)
                 self.homeTabBarController.view.frame.origin.x = 0
@@ -146,7 +146,7 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissSlideMenu(_:)))
         self.homeTabBarController.view.addGestureRecognizer(tapGesture)
         
-        printLog(message: "SlideMenu该出现了")
+        printLog("SlideMenu该出现了")
         
 //        计算距离，执行菜单自动滑动动画
         let mainViewDistance = kScreenW * distancePercent
@@ -167,7 +167,7 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
     
 //    关闭左视图
     func dismissSlideMenu() {
-        printLog(message: "SlideMenu该消失了")
+        printLog("SlideMenu该消失了")
         
         UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.createAvailableArea(kScreenW/6)

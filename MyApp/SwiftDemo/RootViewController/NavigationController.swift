@@ -29,7 +29,7 @@ class NavigationController: UINavigationController,UIGestureRecognizerDelegate,U
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        printLog(message: self.viewControllers.count)
+        printLog(self.viewControllers.count)
         
         if viewControllers.count < 1 {
             viewController.navigationItem.rightBarButtonItem = setRightButton()

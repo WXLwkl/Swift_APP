@@ -10,6 +10,6 @@ target 'SwiftDemo' do
   pod 'Alamofire'   #网络库 类似 AFNetWork
   pod 'Kingfisher'  #图片库 类似 SDWebImage
   pod 'SwiftyJSON'  #JSON库
-
+  pod 'SnapKit'     #布局   Swift版的Masonry
 
 end

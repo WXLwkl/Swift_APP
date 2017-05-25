@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--设置-->
         <scene sceneID="Iga-h3-Nov">
             <objects>
-                <viewController id="ueb-dD-XtD" customClass="SettingViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="ueb-dD-XtD" customClass="SettingViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B9e-5E-Xn5"/>
                         <viewControllerLayoutGuide type="bottom" id="5Vy-73-AAd"/>
@@ -31,6 +31,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.69802473009999999" green="1" blue="0.97275099210000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="设置" id="1uG-iq-9gk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lq0-UZ-CX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

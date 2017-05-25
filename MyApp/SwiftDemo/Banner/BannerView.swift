@@ -227,7 +227,7 @@ extension BannerView : UICollectionViewDataSource {
 extension BannerView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        //代理方法
         delegate?.bannerView(self, didSelectItemAt: IndexPath(item: indexPath.item % (self.bannerModels?.count ?? 0), section: indexPath.section))
     }
 }

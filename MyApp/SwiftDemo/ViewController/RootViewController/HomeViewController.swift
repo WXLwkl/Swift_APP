@@ -52,7 +52,7 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         for dic in applistArray! {
             applistModels.append(ApplistModel(dict: dic as! [String : Any]))
         }
-        printLog(message: applistArray)
+        printLog(applistArray)
         
         
     }
@@ -60,7 +60,7 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
     weak var popMenu: LXFPopMenu?
     
     func add(_ item: UIBarButtonItem) {
-        printLog(message: "AAA")
+        printLog("AAA")
         
             var popMenuItems: [LXFPopMenuItem] = [LXFPopMenuItem]()
             for i in 0..<4 {
@@ -88,7 +88,7 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
             // 弹出菜单
             popMenu?.showMenu(on: self.view, at: CGPoint.zero)
             popMenu?.popMenuDidSelectedBlock = { (index, menuItem) in
-                printLog(message: ("\(index), \(menuItem)"))
+                printLog(("\(index), \(menuItem)"))
             }
         
 
@@ -104,19 +104,23 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         return bannerView!
     }
     
-    func bannerView(_ banner: BannerView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-        let view = NextViewController()
-        view.hidesBottomBarWhenPushed = true
-        view.navigationItem.title = "\(indexPath.row)"
-        navigationController?.pushViewController(view, animated: true)
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//MARK: - bannerView的代理回调
+    func bannerView(_ banner: BannerView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+//        let view = NextViewController()
+//        view.hidesBottomBarWhenPushed = true
+//        view.navigationItem.title = "\(indexPath.row)"
+//        navigationController?.pushViewController(view, animated: true)
+        let viewc = BaseWebViewController(url: "http://m.ybdu.com/xiaoshuo/19/19117/7192834.html")
+        viewc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(viewc, animated: true)
+    }
+    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -150,7 +154,7 @@ extension HomeViewController : UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppListCellID, for: indexPath) as! AppListCell
             let dic: NSDictionary = applistArray?[indexPath.row] as! NSDictionary
-            printLog(message: dic)
+            printLog(dic)
 //            cell.iconImage.image = UIImage(named: dic["image"])
 //            cell.titleLabel.text = dic["title"]
             cell.applistModel = applistModels[indexPath.row]
@@ -162,13 +166,22 @@ extension HomeViewController : UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        switch indexPath.row {
-        case 0:
-            self.performSegue(withIdentifier: "QRSegue", sender: nil)
-        default:
-            break
-            
+        
+        let applistModel = applistModels[indexPath.row]
+       
+        guard applistModel.vc != "" else {
+            return 
         }
+        
+        self.performSegue(withIdentifier: applistModel.vc, sender: nil)
+        
+//        switch indexPath.row {
+//        case 0:
+//            self.performSegue(withIdentifier: "QRSegue", sender: nil)
+//        default:
+//            break
+//            
+//        }
         
 //        let model: ApplistModel = applistModels[indexPath.row]
 //        printLog(message: model.vc)

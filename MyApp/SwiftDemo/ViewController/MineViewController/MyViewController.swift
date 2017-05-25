@@ -12,7 +12,9 @@ import UIKit
 class MyViewController: RootViewController {
 
     var searchController: UISearchController?
+    lazy var listModels: [ListModel] = [ListModel]()
     
+
     // tableView
     lazy var tableView: UITableView = { [unowned self] in
         let tableView = UITableView(frame: self.view.bounds, style: .plain)
@@ -20,34 +22,58 @@ class MyViewController: RootViewController {
         tableView.delegate = self
         tableView.rowHeight = 44.0
         tableView.showsVerticalScrollIndicator = false
-        tableView.contentInset = UIEdgeInsetsMake(64, 0, 44, 0)
-        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 44, 0)
         tableView.separatorInset = UIEdgeInsetsMake(0, 8, 0, 0)
         tableView.tableFooterView = UIView()
         // 注册cellID
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ID")
         return tableView
         }()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "个人中心"
         
         
-        
-        automaticallyAdjustsScrollViewInsets = false
+        navigationController?.navigationBar.isTranslucent = false
         
         // 搜索控制器
         let searchResultVC = RootViewController()
         searchResultVC.view.backgroundColor = UIColor.red
-        let searchController = LXFSearchController(searchResultsController: searchResultVC)
+        let searchController = WeChatSearchController(searchResultsController: searchResultVC)
         self.searchController = searchController
         
         // 添加tableView
         tableView.tableHeaderView = searchController.searchBar
+        self.definesPresentationContext = true   //解决 TableView 向上偏移 64 像素（下面透明）的问题
         view.addSubview(self.tableView)
+        
+        
+        tableView.addExRefresh {
+            self.perform(#selector(self.afterMethod), with: nil, afterDelay: 2, inModes: [RunLoopMode.commonModes])
+        }
+        
+        
+        
+        let path = Bundle.main.bundlePath
+        let plistName:NSString = "PersonalItem.plist"
+        let finalPath = (path as NSString).appendingPathComponent(plistName as String)
+        
+        let listArray = NSArray(contentsOfFile:finalPath as String)!
+        
+        for dic in listArray {
+            listModels.append(ListModel(dict: dic as! [String : Any]))
+        }
     }
-    
+    func afterMethod() {
+        
+        let dic = ["name":"AAA","icon":"searchbutton_nor"]
+        
+        let list = ListModel(dict: dic as [String : Any])
+        
+        listModels.append(list)
+        tableView.header?.endRefresh()
+        tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,6 +91,19 @@ class MyViewController: RootViewController {
     
 // TODO: - 设备信息
     func appInfo() -> Void {
+        
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let second = calendar.component(.second, from: date)
+        
+        printLog("\(year)/\(month)/\(day)/\(hour)/\(minute)/\(second)")
+        
         
         print("It's a print")
         debugPrint("It's a debugPrint")
@@ -100,20 +139,33 @@ class MyViewController: RootViewController {
 
 // MARK:- UITableViewDataSource
 extension MyViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listModels.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ID")
         
-        cell?.textLabel?.text = "\(indexPath.row)"
+        cell?.imageView?.image = UIImage(named: listModels[indexPath.row].icon )
+        cell?.textLabel?.text = listModels[indexPath.row].name
         
         return cell!;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            printLog("0")
+            navigationController?.pushViewController(MyLocationViewController(), animated: true)
+        case 1:
+            printLog("1")
+        case 2:
+            printLog("2")
+        default:
+            printLog("特殊情况")
+        }
     }
 }

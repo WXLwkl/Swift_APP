@@ -23,7 +23,7 @@ class LXFPopMenu: UIView {
     
     // MARK:- 懒加载
     lazy var menuContainerView: UIImageView = { [unowned self] in
-        let container = UIImageView(image: #imageLiteral(resourceName: "MoreFunctionFrame").resizableImage(withCapInsets: UIEdgeInsetsMake(30, 10, 30, 50), resizingMode: .tile))
+        let container = UIImageView(image: UIImage().resizableImage(withCapInsets: UIEdgeInsetsMake(30, 10, 30, 50), resizingMode: .tile))
         container.isUserInteractionEnabled = true
         container.frame = CGRect(x: self.bounds.width - (kLXFMenuTableViewWidth+kLXFMenuTableViewSapcing * 2), y: 65, width: (kLXFMenuTableViewWidth+kLXFMenuTableViewSapcing * 2), height: CGFloat(self.menus?.count ?? 0) * (kLXFMenuItemViewHeight + kLXFSeparatorLineImageViewHeight) + kLXFMenuTableViewSapcing * 2)
         return container
@@ -87,7 +87,7 @@ class LXFPopMenu: UIView {
     }
     
     deinit {
-        LXFLog("我被销毁了")
+        printLog("我被销毁了")
     }
     
     func dismissPopMenuAnimatedOnMenu(selected: Bool) {

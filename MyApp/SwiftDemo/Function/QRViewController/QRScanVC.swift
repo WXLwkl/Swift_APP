@@ -53,7 +53,7 @@ class QRScanVC: RootViewController {
         navigationItem.title = "扫一扫"
         
         scanPane = UIImageView.init(image: UIImage.init(named: "QRCode_ScanBox"))
-        scanPane.frame = CGRect(x: 50, y: 120, width: kScreenWidth-100, height: kScreenWidth-100)
+        scanPane.frame = CGRect(x: 50, y: 120, width: kScreenW-100, height: kScreenW-100)
 
         self.view.addSubview(scanPane)
 
@@ -66,7 +66,7 @@ class QRScanVC: RootViewController {
         label.textAlignment = .center
         label.text = "将取景框对准二维/条形码，即可自动扫描"
         let y = scanPane.frame.maxY
-        label.frame = CGRect(x: 0, y: y + 20, width: kScreenWidth, height: 30)
+        label.frame = CGRect(x: 0, y: y + 20, width: kScreenW, height: 30)
         self.view.addSubview(label)
         
         activityIndicatorView = UIActivityIndicatorView.init()
@@ -85,10 +85,10 @@ class QRScanVC: RootViewController {
         let minY = rect.minY
         let maxY = rect.maxY
         
-        creacteFuzzyArea(rect: CGRect(x: 0, y: 0, width: kScreenWidth, height: minY))
+        creacteFuzzyArea(rect: CGRect(x: 0, y: 0, width: kScreenW, height: minY))
         creacteFuzzyArea(rect: CGRect(x: 0, y: minY, width: minX, height: maxY-minY))
-        creacteFuzzyArea(rect: CGRect(x: maxX, y: minY, width: kScreenWidth-maxX, height: maxY-minY))
-        creacteFuzzyArea(rect: CGRect(x: 0, y: maxY, width: kScreenWidth, height: kScreenHeight-maxY))
+        creacteFuzzyArea(rect: CGRect(x: maxX, y: minY, width: kScreenW-maxX, height: maxY-minY))
+        creacteFuzzyArea(rect: CGRect(x: 0, y: maxY, width: kScreenW, height: kScreenH-maxY))
         
     }
     private func creacteFuzzyArea(rect: CGRect) {
@@ -102,13 +102,13 @@ class QRScanVC: RootViewController {
     
     private func initBottomView() {
         bottomView = {
-            let tempbottomView = UIView.init(frame: CGRect(x: 0, y: kScreenHeight-kNavbarHeight-20, width: kScreenWidth, height: 20 + kNavbarHeight))
+            let tempbottomView = UIView.init(frame: CGRect(x: 0, y: kScreenH-kNavbarHeight-20, width: kScreenW, height: 20 + kNavbarHeight))
             tempbottomView.backgroundColor = kThemeColor
             self.view.addSubview(tempbottomView)
             return tempbottomView
         }()
         
-        let imageViewWidth:CGFloat = kScreenWidth/3
+        let imageViewWidth:CGFloat = kScreenW/3
         for index in 0...3 {
 
             let button: UIButton = UIButton(type: .custom)
@@ -139,7 +139,7 @@ class QRScanVC: RootViewController {
             light(sender)
         case 2:
             
-            printLog(message: "我的二维码页面")
+            printLog("我的二维码页面")
 //            let vc2:MyQRCodeViewController = MyQRCodeViewController()
 //            
 //            self.navigationController?.pushViewController(vc2, animated: false)
@@ -270,7 +270,7 @@ class QRScanVC: RootViewController {
 //            保存会话
             self.scanSession = scanSession
         } catch {
-            printLog(message: error)
+            printLog(error)
             Tool.confirm(title: "温馨提示", message: "摄像头不可用", controller: self)
             return
         }
