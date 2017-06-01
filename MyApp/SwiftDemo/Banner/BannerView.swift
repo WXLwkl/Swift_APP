@@ -12,7 +12,7 @@ import Kingfisher
 
 private let CellId = "BannerID"
 
-protocol BannerViewDelegate: class {
+protocol BannerViewDelegate: NSObjectProtocol {
     func bannerView(_ banner: BannerView, didSelectItemAt indexPath: IndexPath)
 }
 

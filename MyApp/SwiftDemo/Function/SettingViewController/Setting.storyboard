@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,8 +29,77 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2a-NZ-fLx">
+                                <rect key="frame" x="323" y="86" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="G1Q-iJ-Ch9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="aaa:" destination="ueb-dD-XtD" eventType="touchUpInside" id="S3m-Zs-rSF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtD-dA-rQB">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="aaa:" destination="ueb-dD-XtD" eventType="touchUpInside" id="lvO-vY-KrO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-YD-ihX">
+                                <rect key="frame" x="2" y="586" width="22" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HAc-pZ-nSU"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="aaa:" destination="ueb-dD-XtD" eventType="touchUpInside" id="6nc-v1-D5o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8K-7l-nN4">
+                                <rect key="frame" x="314" y="586" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3Up-rI-6uj"/>
+                                    <constraint firstAttribute="width" constant="46" id="6Q6-c5-r7A"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="aaa:" destination="ueb-dD-XtD" eventType="touchUpInside" id="uke-8S-Zbe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEE-7L-thc">
+                                <rect key="frame" x="10" y="86" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Sig-Fi-MEF"/>
+                                    <constraint firstAttribute="height" constant="30" id="jUp-pC-QKW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="aaa:" destination="ueb-dD-XtD" eventType="touchUpInside" id="T7e-aQ-7Iy"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeF-Nr-jUJ">
+                                <rect key="frame" x="112" y="424" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.69802473009999999" green="1" blue="0.97275099210000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="V8K-7l-nN4" firstAttribute="bottom" secondItem="6aw-YD-ihX" secondAttribute="bottom" id="7r3-o6-ONU"/>
+                            <constraint firstItem="O2a-NZ-fLx" firstAttribute="trailing" secondItem="V3N-cQ-QiJ" secondAttribute="trailingMargin" constant="10" id="8Ct-3j-0UZ"/>
+                            <constraint firstItem="xtD-dA-rQB" firstAttribute="centerY" secondItem="V3N-cQ-QiJ" secondAttribute="centerY" id="8tP-DY-cKa"/>
+                            <constraint firstAttribute="trailing" secondItem="V8K-7l-nN4" secondAttribute="trailing" constant="15" id="Aro-h2-Cpw"/>
+                            <constraint firstItem="xtD-dA-rQB" firstAttribute="centerX" secondItem="V3N-cQ-QiJ" secondAttribute="centerX" id="Dml-vQ-hdg"/>
+                            <constraint firstItem="6aw-YD-ihX" firstAttribute="leading" secondItem="V3N-cQ-QiJ" secondAttribute="leading" constant="2" id="MXH-z8-Dok"/>
+                            <constraint firstItem="OEE-7L-thc" firstAttribute="top" secondItem="B9e-5E-Xn5" secondAttribute="bottom" constant="66" id="SDm-TR-Ztq"/>
+                            <constraint firstItem="O2a-NZ-fLx" firstAttribute="top" secondItem="OEE-7L-thc" secondAttribute="top" id="UlB-Ah-37c"/>
+                            <constraint firstItem="V8K-7l-nN4" firstAttribute="top" secondItem="6aw-YD-ihX" secondAttribute="top" id="gVo-xG-dro"/>
+                            <constraint firstItem="5Vy-73-AAd" firstAttribute="top" secondItem="6aw-YD-ihX" secondAttribute="bottom" constant="51" id="gZf-nD-slz"/>
+                            <constraint firstItem="O2a-NZ-fLx" firstAttribute="bottom" secondItem="OEE-7L-thc" secondAttribute="bottom" id="rGq-fw-fgH"/>
+                            <constraint firstItem="OEE-7L-thc" firstAttribute="leading" secondItem="V3N-cQ-QiJ" secondAttribute="leading" constant="10" id="wOd-ut-653"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="设置" id="1uG-iq-9gk"/>
                 </viewController>

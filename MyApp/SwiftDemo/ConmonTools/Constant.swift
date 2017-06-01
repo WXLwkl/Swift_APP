@@ -16,6 +16,8 @@ let kScreenH = UIScreen.main.bounds.height
 // 屏幕高度
 let kScreenW = UIScreen.main.bounds.width
 
+let kMainWindow = UIApplication.shared.keyWindow
+
 let kNavbarHeight:CGFloat   = 64
 let TheUserDefaults         = UserDefaults.standard
 let kDeviceVersion          = Float(UIDevice.current.systemVersion)

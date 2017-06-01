@@ -15,6 +15,11 @@ private let AppListCellID = "AppListCell"
 private let BannerCellID = "BannerCell"
 
 class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDelegate {
+    
+    func xlPopMenu(_ popMenu: XLPopMenu, didSelectItemAt index: NSInteger) {
+        print(index)
+    }
+
 
     lazy var cycleModels : [BannerModel] = [BannerModel]()
     lazy var applistModels: [ApplistModel] = [ApplistModel]()
@@ -29,7 +34,13 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         super.viewDidLoad()
         
         navigationItem.title = "首页"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(HomeViewController.add(_:)))
+        
+        let goBackItem = UIButton.init(type: .contactAdd)
+        goBackItem.sizeToFit()
+        goBackItem.contentHorizontalAlignment = .right
+        goBackItem.addTarget(self, action: #selector(HomeViewController.add(_:)), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: goBackItem)
+        
         
         let bannerArr = [
             ["imageUrl":"pic1","title":"xingl","url":"https://www.baidu.com"],
@@ -56,42 +67,19 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         
         
     }
-    // 菜单
-    weak var popMenu: LXFPopMenu?
     
-    func add(_ item: UIBarButtonItem) {
-        printLog("AAA")
+    func add(_ item: UIButton) {
         
-            var popMenuItems: [LXFPopMenuItem] = [LXFPopMenuItem]()
-            for i in 0..<4 {
-                var image: UIImage!
-                var title: String!
-                switch i {
-                case 0:
-                    image = UIImage()
-                    title = "发起群聊"
-                case 1:
-                    image = UIImage()
-                    title = "添加朋友"
-                case 2:
-                    image = UIImage()
-                    title = "扫一扫"
-                case 3:
-                    image = UIImage()
-                    title = "收付款"
-                default: break
-                }
-                let popMenuItem = LXFPopMenuItem(image: image, title: title)
-                popMenuItems.append(popMenuItem)
-            }
-            self.popMenu = LXFPopMenu(menus: popMenuItems)
-            // 弹出菜单
-            popMenu?.showMenu(on: self.view, at: CGPoint.zero)
-            popMenu?.popMenuDidSelectedBlock = { (index, menuItem) in
-                printLog(("\(index), \(menuItem)"))
-            }
+        let titles = ["发起群聊", "添加朋友", "扫一扫", "收付款", "拍摄", "面对面传"]
+        let icons = ["searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor"]
+        let pop = XLPopMenu(titles: titles as NSArray, icons: icons as NSArray, menuWidth: 150)
+//        pop.delegate = self
+        pop.showMenu(on: item)
         
-
+        pop.popMenuDidSelectedBlock = { (index) in
+            
+            printLog(index)
+        }
     }
     
     func getBannerView(frame: CGRect) -> BannerView {

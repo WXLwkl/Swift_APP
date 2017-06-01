@@ -8,19 +8,53 @@
 
 import UIKit
 
-class SettingViewController: RootViewController {
+class SettingViewController: RootViewController, XLPopMenuDelegate {
 
+    func xlPopMenu(_ popMenu: XLPopMenu, didSelectItemAt index: NSInteger) {
+        printLog(index)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func aaa(_ sender: UIButton) {
+        let titles = ["发起群聊", "添加朋友", "扫一扫", "收付款", "拍摄", "面对面传"]
+        let icons = ["searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor"]
+        let pop = XLPopMenu(titles: titles as NSArray, icons: icons as NSArray, menuWidth: 150)
+        pop.delegate = self
+        
+        pop.showMenu(on: sender)
+        
+        
+        
+    }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let titles = ["发起群聊", "添加朋友", "扫一扫", "收付款", "拍摄", "面对面传"]
+        let icons = ["searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor"]
+        let pop = XLPopMenu(titles: titles as NSArray, icons: icons as NSArray, menuWidth: 150)
+        pop.kCornerRadius = 7
+        pop.type = .dark
+//        pop.offset = 50
+        let p = touches.first
+        let pointInview = p?.location(in: self.navigationController?.view)
+//        pop.isShowShadow = false
+        pop.showMenu(at: pointInview!)
+        
+        
+        
+        pop.popMenuDidSelectedBlock = { (index, title) in
+            
+            printLog("----\(index)--\(title)")
+        }
+    }
 
     /*
     // MARK: - Navigation
