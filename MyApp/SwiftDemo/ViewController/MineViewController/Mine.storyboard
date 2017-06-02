@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B0C-eE-Efw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wjv-Df-2jm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,56 +10,50 @@
     </dependencies>
     <scenes>
         <!--My View Controller-->
-        <scene sceneID="vXp-br-qwG">
+        <scene sceneID="l6H-os-zu0">
             <objects>
-                <viewController id="J9p-w0-vgc" customClass="MyViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iTu-jE-X7W" customClass="MyViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K6V-4K-znt"/>
-                        <viewControllerLayoutGuide type="bottom" id="YUb-bO-yZC"/>
+                        <viewControllerLayoutGuide type="top" id="zla-xE-h7K"/>
+                        <viewControllerLayoutGuide type="bottom" id="d2t-jy-9rm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="smx-hh-38h">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" contentMode="scaleToFill" id="KSg-JW-DeD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nqt-aI-GRh">
-                        <barButtonItem key="rightBarButtonItem" image="setting" id="AXF-ZS-eBr">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <navigationItem key="navigationItem" id="CGb-zt-8rC">
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="lu3-7N-XbE">
                             <connections>
-                                <action selector="settingClick:" destination="J9p-w0-vgc" id="I8M-iB-y9x"/>
+                                <action selector="settingClick:" destination="iTu-jE-X7W" id="Nuj-xq-KTT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-gZ-9JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0m3-M8-K6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="497"/>
+            <point key="canvasLocation" x="719" y="514"/>
         </scene>
-        <!--我的-->
-        <scene sceneID="YhX-bu-YTC">
+        <!--Navigation Controller-->
+        <scene sceneID="1oU-6p-gNl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0C-eE-Efw" customClass="NavigationController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="item2_1" selectedImage="item2_1" id="z5Z-GF-361"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wjv-Df-2jm" customClass="NavigationController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
-                        <color key="tintColor" red="0.6980247300924195" green="1" blue="0.97275099209066729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </simulatedTabBarMetrics>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6O1-je-54F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WiD-D7-NIz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="J9p-w0-vgc" kind="relationship" relationship="rootViewController" id="3wL-nM-yDd"/>
+                        <segue destination="iTu-jE-X7W" kind="relationship" relationship="rootViewController" id="oDr-Wa-Cx8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ams-80-peg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UxD-ee-ecP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="510"/>
+            <point key="canvasLocation" x="-319.19999999999999" y="530.28485757121439"/>
         </scene>
     </scenes>
     <resources>
-        <image name="item2_1" width="30" height="30"/>
-        <image name="setting" width="30" height="30"/>
+        <image name="setting" width="25" height="25"/>
     </resources>
 </document>

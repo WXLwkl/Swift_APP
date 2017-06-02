@@ -162,6 +162,7 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(MyLocationViewController(), animated: true)
         case 1:
             printLog("1")
+            navigationController?.pushViewController(LuckyDrawViewController(), animated: true)
         case 2:
             printLog("2")
         default:

@@ -37,14 +37,6 @@ class BannerView: UIView {
         }
     }
     
-    fileprivate var cycleTimer: Timer?
-    weak var delegate: BannerViewDelegate?
-    
-    fileprivate var oldOffset: CGFloat = 0.0
-    fileprivate var currentIndexPath: IndexPath?
-    
-    fileprivate var timer: Timer?
-    
     /// 是否开启自动滚动,默认是ture
     var autoScroll: Bool = true {
         didSet {
@@ -63,6 +55,13 @@ class BannerView: UIView {
         }
     }
     
+    fileprivate var cycleTimer: Timer?
+    weak var delegate: BannerViewDelegate?
+    
+    fileprivate var oldOffset: CGFloat = 0.0
+    fileprivate var currentIndexPath: IndexPath?
+    
+    fileprivate var timer: Timer?
     func setupTimer(_ userInfo: AnyObject?) {
         self.timer?.invalidate() //先取消先前定时器
         let timer = Timer(timeInterval: timeInterval, target: self, selector: #selector(BannerView.changePicture), userInfo: userInfo, repeats: true)

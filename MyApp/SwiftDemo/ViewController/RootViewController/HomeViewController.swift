@@ -73,7 +73,7 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         let titles = ["发起群聊", "添加朋友", "扫一扫", "收付款", "拍摄", "面对面传"]
         let icons = ["searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor"]
         let pop = XLPopMenu(titles: titles as NSArray, icons: icons as NSArray, menuWidth: 150)
-//        pop.delegate = self
+        pop.offset = 10
         pop.showMenu(on: item)
         
         pop.popMenuDidSelectedBlock = { (index) in

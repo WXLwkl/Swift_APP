@@ -42,6 +42,9 @@
 		917BAF9D1ECAE2B000F3ABAA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917BAF9B1ECAE2B000F3ABAA /* SettingViewController.swift */; };
 		917BAF9F1ECAEC0A00F3ABAA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917BAF9E1ECAEC0A00F3ABAA /* MapKit.framework */; };
 		917BAFA11ECAEC2400F3ABAA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917BAFA01ECAEC2400F3ABAA /* CoreLocation.framework */; };
+		917E52361EE1607F00B8A4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917E52351EE1607F00B8A4C5 /* Assets.xcassets */; };
+		917E52391EE163A400B8A4C5 /* LuckyDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917E52381EE163A400B8A4C5 /* LuckyDrawViewController.swift */; };
+		917E523B1EE1663900B8A4C5 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 917E523A1EE1663900B8A4C5 /* image.jpg */; };
 		9194F7181EA9F09F00282954 /* Applist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9194F7141EA9F09F00282954 /* Applist.plist */; };
 		9194F7191EA9F09F00282954 /* AppListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F7151EA9F09F00282954 /* AppListCell.swift */; };
 		9194F71A1EA9F09F00282954 /* ApplistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194F7161EA9F09F00282954 /* ApplistModel.swift */; };
@@ -68,7 +71,6 @@
 		91DF29E81EBAD7540096F040 /* LeftSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DF29E71EBAD7540096F040 /* LeftSlideMenuController.swift */; };
 		91DF29EA1EBAD81D0096F040 /* LeftSlideMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DF29E91EBAD81D0096F040 /* LeftSlideMenu.xib */; };
 		91E368FA1DBF5C2200958A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E368F91DBF5C2200958A41 /* AppDelegate.swift */; };
-		91E369011DBF5C2200958A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E369001DBF5C2200958A41 /* Assets.xcassets */; };
 		91E5AE8F1ED40A0B0055AEB9 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5AE8E1ED40A0B0055AEB9 /* FindViewController.swift */; };
 		91F967B41EA9FB7900D6B5C6 /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967B31EA9FB7900D6B5C6 /* MallViewController.swift */; };
 		91F967B71EA9FBC400D6B5C6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F967B61EA9FBC400D6B5C6 /* MyViewController.swift */; };
@@ -116,6 +118,9 @@
 		917BAF9B1ECAE2B000F3ABAA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = SettingViewController/SettingViewController.swift; sourceTree = "<group>"; };
 		917BAF9E1ECAEC0A00F3ABAA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		917BAFA01ECAEC2400F3ABAA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		917E52351EE1607F00B8A4C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		917E52381EE163A400B8A4C5 /* LuckyDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LuckyDrawViewController.swift; path = LuckyDrawViewController/LuckyDrawViewController.swift; sourceTree = "<group>"; };
+		917E523A1EE1663900B8A4C5 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		9194F7141EA9F09F00282954 /* Applist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Applist.plist; sourceTree = "<group>"; };
 		9194F7151EA9F09F00282954 /* AppListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppListCell.swift; sourceTree = "<group>"; };
 		9194F7161EA9F09F00282954 /* ApplistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplistModel.swift; sourceTree = "<group>"; };
@@ -143,7 +148,6 @@
 		91DF29E91EBAD81D0096F040 /* LeftSlideMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeftSlideMenu.xib; path = LeftSlideMenuController/LeftSlideMenu.xib; sourceTree = "<group>"; };
 		91E368F61DBF5C2200958A41 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E368F91DBF5C2200958A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91E369001DBF5C2200958A41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91E369051DBF5C2200958A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91E5AE8E1ED40A0B0055AEB9 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindViewController.swift; path = FindViewController/FindViewController.swift; sourceTree = "<group>"; };
 		91F967B31EA9FB7900D6B5C6 /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +268,15 @@
 			name = "MyLocationViewController(我的位置)";
 			sourceTree = "<group>";
 		};
+		917E52371EE1633600B8A4C5 /* luckyDrawViewController(刮刮乐) */ = {
+			isa = PBXGroup;
+			children = (
+				917E523A1EE1663900B8A4C5 /* image.jpg */,
+				917E52381EE163A400B8A4C5 /* LuckyDrawViewController.swift */,
+			);
+			name = "luckyDrawViewController(刮刮乐)";
+			sourceTree = "<group>";
+		};
 		9194F7121EA9F09F00282954 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +360,7 @@
 				91F967BD1EAA044100D6B5C6 /* HTML */,
 				91249EAE1E9F4D5500387E12 /* Banner */,
 				910D09FA1EE00DD100BF8D1E /* XLPopMenu */,
-				91E369001DBF5C2200958A41 /* Assets.xcassets */,
+				917E52351EE1607F00B8A4C5 /* Assets.xcassets */,
 				91E369051DBF5C2200958A41 /* Info.plist */,
 			);
 			path = SwiftDemo;
@@ -412,6 +425,7 @@
 		91F967C31EAA055300D6B5C6 /* Function(功能) */ = {
 			isa = PBXGroup;
 			children = (
+				917E52371EE1633600B8A4C5 /* luckyDrawViewController(刮刮乐) */,
 				91E5AE8D1ED409CB0055AEB9 /* FindViewController(发现) */,
 				917BAF8E1ECAE19700F3ABAA /* MyLocationViewController(我的位置) */,
 				9152444C1EC0406600152E94 /* LinkageViewController(联动) */,
@@ -505,16 +519,17 @@
 				9194F7181EA9F09F00282954 /* Applist.plist in Resources */,
 				91C5FC701EB1CD5C00B22977 /* noticeMusic.caf in Resources */,
 				915244641EC04C6500152E94 /* liwushuo.json in Resources */,
+				917E52361EE1607F00B8A4C5 /* Assets.xcassets in Resources */,
 				91656FD91EB315D2001018EF /* Mine.storyboard in Resources */,
 				917BAF8B1ECAD6FD00F3ABAA /* PersonalItem.plist in Resources */,
 				91F967C01EAA044100D6B5C6 /* index.html in Resources */,
-				91E369011DBF5C2200958A41 /* Assets.xcassets in Resources */,
 				91F967C11EAA044100D6B5C6 /* message.html in Resources */,
 				917BAF9C1ECAE2B000F3ABAA /* Setting.storyboard in Resources */,
 				915244621EC04C5A00152E94 /* meituan.json in Resources */,
 				91DF29EA1EBAD81D0096F040 /* LeftSlideMenu.xib in Resources */,
 				91656FDB1EB31A7B001018EF /* Mall.storyboard in Resources */,
 				91656FDD1EB31AA3001018EF /* Root.storyboard in Resources */,
+				917E523B1EE1663900B8A4C5 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +602,7 @@
 				91998E7A1ED5843E000D6058 /* UIView+Extension.swift in Sources */,
 				91249EB01E9F4D7A00387E12 /* BannerView.swift in Sources */,
 				915244751EC0613500152E94 /* CollectionViewHeaderView.swift in Sources */,
+				917E52391EE163A400B8A4C5 /* LuckyDrawViewController.swift in Sources */,
 				917BAF931ECAE27900F3ABAA /* CloseSlideMenuDelegate.swift in Sources */,
 				91A2E7481ED433E900A0E9FB /* TestViewController.swift in Sources */,
 				91656FD71EB2FA40001018EF /* NavigationController.swift in Sources */,
