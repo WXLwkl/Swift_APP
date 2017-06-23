@@ -30,10 +30,25 @@ class BaseWebViewController: RootViewController {
     }
 
     func setupUI() {
-        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH))
-//        if url == "" {
-//            return
-//        }
+        
+        let configuretion = WKWebViewConfiguration()
+        
+        // Webview的偏好设置
+        configuretion.preferences = WKPreferences()
+        configuretion.preferences.minimumFontSize = 10
+        configuretion.preferences.javaScriptEnabled = true
+        
+        // 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
+        configuretion.preferences.javaScriptCanOpenWindowsAutomatically = false
+        
+        // 通过js与webview内容交互配置
+        configuretion.userContentController = WKUserContentController()
+        
+        
+        webView = WKWebView(frame:view.bounds, configuration: configuretion)
+        
+        //开启手势交互
+        webView?.allowsBackForwardNavigationGestures = true
         
         guard (url != nil) else {
             return
@@ -184,7 +199,7 @@ extension BaseWebViewController: WKUIDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.navigationItem.title = webView.title
     }
-//    webView加载失败后提示
+//    webView内容加载失败后提示
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         guard let btn = button else {
             button = UIButton(type: .system)

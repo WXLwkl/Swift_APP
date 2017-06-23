@@ -1,9 +1,9 @@
 //
 //  NSString+Extension.swift
-//  LXFFM
+//  SwiftDemo
 //
-//  Created by Rainy on 2016/11/25.
-//  Copyright © 2016年 LXF. All rights reserved.
+//  Created by xingl on 2017/3/21.
+//  Copyright © 2017年 yjpal. All rights reserved.
 //
 
 import Foundation

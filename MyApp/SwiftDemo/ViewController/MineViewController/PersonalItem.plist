@@ -7,7 +7,23 @@
 		<string>我的位置</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
-		<key>class</key>
+		<key>className</key>
+		<string>MyLocationViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>刮刮乐</string>
+		<key>icon</key>
+		<string>searchbutton_nor</string>
+		<key>className</key>
+		<string>LuckyDrawViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>我的位置</string>
+		<key>icon</key>
+		<string>searchbutton_nor</string>
+		<key>className</key>
 		<string>MyLocationViewController</string>
 	</dict>
 	<dict>
@@ -15,31 +31,15 @@
 		<string>我的位置</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
-		<key>class</key>
-		<string>MyLocationViewController</string>
+		<key>className</key>
+		<string>FindViewController</string>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>我的位置</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
-		<key>class</key>
-		<string>MyLocationViewController</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>我的位置</string>
-		<key>icon</key>
-		<string>searchbutton_nor</string>
-		<key>class</key>
-		<string>MyLocationViewController</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>我的位置</string>
-		<key>icon</key>
-		<string>searchbutton_nor</string>
-		<key>class</key>
+		<key>className</key>
 		<string>MyLocationViewController</string>
 	</dict>
 </array>

@@ -1,9 +1,9 @@
 //
 //  Common.swift
-//  CustomPrintln
+//  SwiftDemo
 //
-//  Created by LXF on 2016/11/7.
-//  Copyright © 2016年 LXF. All rights reserved.
+//  Created by xingl on 2017/3/21.
+//  Copyright © 2017年 yjpal. All rights reserved.
 //
 
 import UIKit

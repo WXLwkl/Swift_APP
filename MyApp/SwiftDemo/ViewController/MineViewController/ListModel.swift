@@ -12,6 +12,7 @@ class ListModel: NSObject {
     
     var icon: String = ""
     var name: String = ""
+    var className:String = ""
     
     init(dict : [String : Any]) {
         super.init()

@@ -13,9 +13,23 @@ class SettingViewController: RootViewController, XLPopMenuDelegate {
     func xlPopMenu(_ popMenu: XLPopMenu, didSelectItemAt index: NSInteger) {
         printLog(index)
     }
+    
+    static func storyboardInstance() -> SettingViewController? {
+//Bundle(for: type(of: self) as! AnyClass)
+//        let storyboard = UIStoryboard(name: String(describing: type(of: self)), bundle: nil)
+        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
+        return storyboard.instantiateInitialViewController() as? SettingViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        printLog(self.navigationController?.navigationBar.isTranslucent)
+        
+        
+    
+        
         
     }
 

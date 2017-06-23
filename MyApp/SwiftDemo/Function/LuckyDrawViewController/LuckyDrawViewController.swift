@@ -12,7 +12,6 @@ class LuckyDrawViewController: RootViewController {
 
     
     var imageView = UIImageView()
-    var isTouch: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,73 +22,55 @@ class LuckyDrawViewController: RootViewController {
     }
 
     func setupUI() {
+        
+        
         let textLabel = UILabel()
         textLabel.text = "一等奖:1000万"
         textLabel.textAlignment = .center
+        textLabel.font = UIFont.systemFont(ofSize: 20)
         view.addSubview(textLabel)
-        
-        textLabel.bounds = CGRect(x: 0, y: 0, width: 200, height: 100)
+        textLabel.backgroundColor = #colorLiteral(red: 0.9999160171, green: 1, blue: 0.9998719096, alpha: 1)
+        textLabel.bounds = CGRect(x: 0, y: 0, width: 300, height: 200)
         textLabel.center = self.view.center
-        
-/*
-         pageManager.view.snp.makeConstraints { (make) in
-         make.top.equalTo(VCManager.snp.bottom)
-         make.left.right.equalTo(view)
-         make.bottom.equalTo(view.snp.bottom)
-         }
-         
-         */
-        
-//        textLabel.snp.makeConstraints { (make) in
-//            make.center.equalTo(view)
-//            make.width.equalTo(200)
-//            make.height.equalTo(100)
-//        }
+
         
         imageView = UIImageView(image: #imageLiteral(resourceName: "image.jpg"))
         imageView.isUserInteractionEnabled = true
         view.addSubview(imageView)
-        imageView.bounds = CGRect(x: 0, y: 0, width: 200, height: 100)
+        imageView.bounds = CGRect(x: 0, y: 0, width: 300, height: 200)
         imageView.center = self.view.center
-//        imageView.snp.makeConstraints { (make) in
-//            make.center.equalTo(view)
-//            make.width.equalTo(200)
-//            make.height.equalTo(100)
-//        }
+        
+        
+        let tip = UILabel()
+        tip.text = "小赌怡情、大赌伤身！\n且行且珍惜"
+        tip.textAlignment = .center
+        tip.font = UIFont.boldSystemFont(ofSize: 30)
+        view.addSubview(tip)
+        tip.numberOfLines = 0
+        tip.frame = CGRect(x: 0, y: textLabel.frame.minY - 100, width: kScreenW, height: 100)
+        
         
     }
     
     //MARK: - 仿支付宝刮刮乐
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        for touch:AnyObject in touches {
-            let t:UITouch = touch as! UITouch
-            if t.view == imageView {
-                isTouch = true
-            }
-        }
-    }
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if isTouch {
-            for touch:AnyObject in touches {
-                UIGraphicsBeginImageContext(imageView.frame.size)
-                imageView.image?.draw(in: imageView.bounds)
-                let t:UITouch = touch as! UITouch
-                let point = t.location(in: t.view)
-                let rect = CGRect(x: point.x-10, y: point.y-10, width: 20, height: 20)
-                UIGraphicsGetCurrentContext()!.clear(rect)
-                imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
-                
-            }
+        for touch:AnyObject in touches {
+            
+            UIGraphicsBeginImageContext(imageView.frame.size)
+            imageView.image?.draw(in: imageView.bounds)
+            let t:UITouch = touch as! UITouch
+            let point = t.location(in: imageView)
+            let rect = CGRect(x:point.x - 10 ,y:point.y - 10, width: 20, height: 20)
+            UIGraphicsGetCurrentContext()!.clear(rect)
+            imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            
         }
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        isTouch = false
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

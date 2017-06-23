@@ -19,6 +19,10 @@ class NextViewController: RootViewController,WKNavigationDelegate {
         let webView = WKWebView(frame: frame)
         let res = Bundle.main.path(forResource: "message", ofType: "html")
         let url = URL(fileURLWithPath: res!)
+        
+//        let res = Bundle.main.path(forResource: "message", ofType: "html")
+        
+        
         webView .load(URLRequest(url: url))
         webView.navigationDelegate = self
         self.view.addSubview(webView)

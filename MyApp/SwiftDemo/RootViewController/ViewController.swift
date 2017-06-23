@@ -37,13 +37,13 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
         view.addSubview(slideMenu.view)
         view.addSubview(homeTabBarController.view)
         
-        createAvailableArea(UIScreen.main.bounds.size.width / 6)
+//        createAvailableArea(UIScreen.main.bounds.size.width / 6)
         
-        panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.pan(_:)))
-        self.homeTabBarController.view.addGestureRecognizer(panGesture)
-        
-        slideMenu.delegate = selectedView?.visibleViewController as? SlideMenuDelegate
-        slideMenu.closeDelegate = self
+//        panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.pan(_:)))
+//        self.homeTabBarController.view.addGestureRecognizer(panGesture)
+//        
+//        slideMenu.delegate = selectedView?.visibleViewController as? SlideMenuDelegate
+//        slideMenu.closeDelegate = self
     }
     
     func createAvailableArea(_ x: CGFloat) {

@@ -1,9 +1,9 @@
 //
 //  UIView+Extension.swift
+//  SwiftDemo
 //
-//
-//  Created by LXF on 16/3/29.
-//  Copyright © 2016年 LXF. All rights reserved.
+//  Created by xingl on 2017/3/21.
+//  Copyright © 2017年 yjpal. All rights reserved.
 //
 
 import Foundation

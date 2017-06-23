@@ -82,9 +82,11 @@ class MyViewController: RootViewController {
     
     @IBAction func settingClick(_ sender: UIBarButtonItem) {
         appInfo()
-        let vc = UIStoryboard(name: "Setting", bundle: nil)
-            .instantiateInitialViewController() as! SettingViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = UIStoryboard(name: "Setting", bundle: nil)
+//            .instantiateInitialViewController() as! SettingViewController
+        
+        let vc = SettingViewController.storyboardInstance()
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
@@ -156,6 +158,19 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let listModel:ListModel = listModels[indexPath.row]
+        let className = listModel.className
+        
+        let viewController = getChildViewController(className)
+        
+        guard (viewController != nil) else {
+            return
+        }
+        
+        navigationController?.pushViewController(viewController!, animated: true)
+        return
+        
         switch indexPath.row {
         case 0:
             printLog("0")
@@ -170,3 +185,27 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
+
+
+private func getChildViewController(_ childControllerName : String) -> UIViewController? {
+    
+    // 1.获取命名空间
+    guard let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] else {
+        printLog( "命名空间不存在")
+        return nil
+    }
+    // 2.通过命名空间和类名转换成类
+    let cls : AnyClass? = NSClassFromString((clsName as! String) + "." + childControllerName)
+    
+    // swift 中通过Class创建一个对象,必须告诉系统Class的类型
+    guard let clsType = cls as? UIViewController.Type else {
+        printLog( "无法转换成UIViewController")
+        return nil
+    }
+    
+    // 3.通过Class创建对象
+    let childController = clsType.init()
+    childController.hidesBottomBarWhenPushed = true
+    return childController
+}
+

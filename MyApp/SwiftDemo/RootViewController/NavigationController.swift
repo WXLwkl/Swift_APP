@@ -10,6 +10,7 @@ import UIKit
 
 class NavigationController: UINavigationController,UIGestureRecognizerDelegate,UINavigationControllerDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,12 +21,18 @@ class NavigationController: UINavigationController,UIGestureRecognizerDelegate,U
 //        self.navigationBar.barTintColor = UIColor(red:0.16, green:0.42, blue:0.84, alpha:1.00)
 //        self.navigationBar.tintColor = UIColor.red
 //        self.navigationBar.isTranslucent = false
+        
+        
+        let navBar = UINavigationBar.appearance()
         //设置标题颜色
-
+        navBar.tintColor = UIColor.white
+        
         let textAttributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 18),NSForegroundColorAttributeName:UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = textAttributes
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor(red:0.16, green:0.42, blue:0.84, alpha:1.00)
+        
+        navBar.titleTextAttributes = textAttributes
+        
+//        navBar.barTintColor = UIColor(red:0.16, green:0.42, blue:0.84, alpha:1.00)
+        navBar.setBackgroundImage(#imageLiteral(resourceName: "navBarImage.png"), for: .default)
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -43,10 +50,10 @@ class NavigationController: UINavigationController,UIGestureRecognizerDelegate,U
     func setBackBarButtonItem() -> UIBarButtonItem {
         
         let goBackItem = UIButton.init(type: .custom)
-        goBackItem.setImage(UIImage(named: "Nav_goBack"), for: .normal)
+        goBackItem.setImage(UIImage(named: "goBack"), for: .normal)
         goBackItem.sizeToFit()
-        goBackItem.frame.size = CGSize(width: 30, height: 30)
-        goBackItem.contentHorizontalAlignment = .right
+//        goBackItem.frame.size = CGSize(width: 30, height: 30)
+//        goBackItem.contentHorizontalAlignment = .left
         goBackItem.addTarget(self, action: #selector(NavigationController.goBack(sender:)), for: .touchUpInside)
         return UIBarButtonItem.init(customView: goBackItem)
 

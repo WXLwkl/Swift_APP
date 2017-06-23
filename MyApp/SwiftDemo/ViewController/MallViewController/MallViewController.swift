@@ -21,17 +21,11 @@ class MallViewController: RootViewController, WKNavigationDelegate {
         let webView = WKWebView(frame: frame)
         let res = Bundle.main.path(forResource: "message", ofType: "html")
         let url = URL(fileURLWithPath: res!)
-        webView .load(URLRequest(url: url))
+        webView.load(URLRequest(url: url))
         webView.navigationDelegate = self
         self.view.addSubview(webView)
 
         
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // 设置状态栏颜色
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

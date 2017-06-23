@@ -32,7 +32,7 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isTranslucent = false
         navigationItem.title = "首页"
         
         let goBackItem = UIButton.init(type: .contactAdd)
@@ -67,18 +67,19 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         
         
     }
-    
+
     func add(_ item: UIButton) {
         
         let titles = ["发起群聊", "添加朋友", "扫一扫", "收付款", "拍摄", "面对面传"]
         let icons = ["searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor", "searchbutton_nor"]
         let pop = XLPopMenu(titles: titles as NSArray, icons: icons as NSArray, menuWidth: 150)
-        pop.offset = 10
+        pop.offset = 12
         pop.showMenu(on: item)
         
         pop.popMenuDidSelectedBlock = { (index) in
             
             printLog(index)
+
         }
     }
     

@@ -18,10 +18,14 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         self.tabBar.isTranslucent = false  //避免受默认的半透明色影响，关闭
 //        设置选中颜色
         self.tabBar.tintColor = UIColor(red: 0/255, green:186/255, blue:255/255, alpha:1)
-        self.selectedIndex = 1;
+        
+        let customTabbar: CustomTabBar = CustomTabBar.init(frame: self.tabBar.frame)
+        self.setValue(customTabbar, forKey: "tabBar")
+        customTabbar.delegateTabbar = self
 //
         addChildViewControllers()
-
+        
+        
 //        let recentVC = RecentViewController()
 //        let contactVC = ContactViewController()
 //        let spaceVC = SpaceViewController()
@@ -42,10 +46,14 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
     }
     
     private func addChildViewControllers() {
-        setChildrenController(title: "应用", image: UIImage(named: "item0_1")!, selectedImage: UIImage(named: "item0_1")!, storyboard: UIStoryboard(name: "Root", bundle: nil))
-        setChildrenController(title: "商城", image: UIImage(named: "item1_1")!, selectedImage: UIImage(named: "item1_1")!, storyboard: UIStoryboard(name: "Mall", bundle: nil))
-        setChildrenController(title: "我的", image: UIImage(named: "item2_1")!, selectedImage: UIImage(named: "item2_1")!, storyboard: UIStoryboard(name: "Mine", bundle: nil))
         
+        setChildrenController(title: "应用", image: UIImage(named: "item0_1")!, selectedImage: UIImage(named: "item0_1")!, storyboard: UIStoryboard(name: "Root", bundle: nil))
+        
+        setChildrenController(title: "关注", image: UIImage(named: "item3_1")!, selectedImage: UIImage(named: "item3_1")!, storyboard: UIStoryboard(name: "Follow", bundle: nil))
+        
+        setChildrenController(title: "商城", image: UIImage(named: "item1_1")!, selectedImage: UIImage(named: "item1_1")!, storyboard: UIStoryboard(name: "Mall", bundle: nil))
+        
+        setChildrenController(title: "我的", image: UIImage(named: "item2_1")!, selectedImage: UIImage(named: "item2_1")!, storyboard: UIStoryboard(name: "Mine", bundle: nil))
     }
     /// 添加一个子控制器
     private func setChildrenController(title:String, image:UIImage,selectedImage:UIImage, storyboard:UIStoryboard) {
@@ -72,17 +80,11 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         return true
     }
 
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension TabBarController: CustomBarButtonDelegate {
+    func barButtonAction(_ sender: UIButton) {
+        print(" RootViewController---->CustomBarbuttonDelegate方法")
+    }
+}
+

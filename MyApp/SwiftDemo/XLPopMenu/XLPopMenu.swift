@@ -158,7 +158,7 @@ class XLPopMenu: UIView {
         self.addSubview(mainView!)
         
         bgView = UIView(frame: UIScreen.main.bounds)
-        bgView?.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        bgView?.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         bgView?.alpha = 0
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(XLPopMenu.dismiss))
