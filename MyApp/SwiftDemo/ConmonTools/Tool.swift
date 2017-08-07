@@ -67,9 +67,8 @@ class Tool: NSObject
         isEditor = editor
         
         
-        if options.contains(.camera) && options.contains(.photoLibrary)
-        {
-            let alertController = UIAlertController(title: "请选择图片", message: nil, preferredStyle: .actionSheet)
+        if options.contains(.camera) && options.contains(.photoLibrary) {
+            let alertController = UIAlertController(title: nil, message: "请选择图片", preferredStyle: .actionSheet)
             
             let photographAction = UIAlertAction(title: "拍照", style: .default) { (_) in
                 
@@ -92,14 +91,11 @@ class Tool: NSObject
             
             
         }
-        else  if options.contains(.photoLibrary)
-        {
+        else  if options.contains(.photoLibrary) {
             
             self.openPhotoLibrary(controller: controller, editor: editor)
             
-        }
-        else if options.contains(.camera)
-        {
+        } else if options.contains(.camera) {
             
             self.openCamera(controller: controller, editor: editor)
 
@@ -110,8 +106,7 @@ class Tool: NSObject
     
     ///打开相册
     
-    func openPhotoLibrary(controller : UIViewController,  editor : Bool)
-    {
+    func openPhotoLibrary(controller : UIViewController,  editor : Bool) {
         
         let photo = UIImagePickerController()
         photo.delegate = self
@@ -123,8 +118,7 @@ class Tool: NSObject
     
     ///打开相机
     
-    func openCamera(controller : UIViewController,  editor : Bool)
-    {
+    func openCamera(controller : UIViewController,  editor : Bool) {
         
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
         
@@ -171,11 +165,9 @@ class Tool: NSObject
 //MARK: -
 //MARK:  Delegate
 
-extension Tool : UIImagePickerControllerDelegate,UINavigationControllerDelegate
-{
+extension Tool : UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
-    {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         guard let image = info[isEditor ? UIImagePickerControllerEditedImage : UIImagePickerControllerOriginalImage] as? UIImage else { return }
         picker.dismiss(animated: true) { [weak self] in
@@ -185,8 +177,7 @@ extension Tool : UIImagePickerControllerDelegate,UINavigationControllerDelegate
         
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
-    {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
         picker.dismiss(animated: true, completion: nil)
         
