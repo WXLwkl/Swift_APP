@@ -26,6 +26,13 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        printLog("ssssssss")
+        
+        
+        
+        
         homeTabBarController = TabBarController()
         slideMenu = LeftSlideMenuController()
 

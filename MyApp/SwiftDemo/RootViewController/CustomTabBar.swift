@@ -67,7 +67,7 @@ class CustomTabBar: UITabBar {
         var itemCurrent: CGFloat = 0
         
         for item in self.subviews {
-            print("子视图->",item,"\n")
+            
             if NSStringFromClass(item.classForCoder) == "UITabBarButton" {
                 if itemCurrent == 2 {
                     itemCurrent = 3

@@ -26,6 +26,7 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         
         addChildViewControllers()
         
+//        self.tabBar.clipsToBounds = true
         
 //        let recentVC = RecentViewController()
 //        let contactVC = ContactViewController()
@@ -85,6 +86,7 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
 
 extension TabBarController: CustomBarButtonDelegate {
     func barButtonAction(_ sender: UIButton) {
+        
         print(" RootViewController---->CustomBarbuttonDelegate方法")
     }
 }

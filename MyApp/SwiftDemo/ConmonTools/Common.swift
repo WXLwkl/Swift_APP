@@ -23,8 +23,9 @@ func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
 func printLog<T>(_ message: T,
               file: String = #file,
               method: String = #function,
-              line: Int = #line)
-{
+              line: Int = #line) {
+    
+    
     #if DEBUG
         print("[\((file as NSString).lastPathComponent) \(method)] [line:\(line)]: \(message)")
     #endif
