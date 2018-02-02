@@ -1,8 +1,8 @@
 # Swift_APP
-该APP为功能APP(把自己总结的demo集合到一个app里面)
+>该APP为功能APP(把自己总结的demo集合到一个app里面)
 
-该APP包含功能：
-    1、
+####该APP包含功能：
+	1、
     2、
     3、
     4、

@@ -180,6 +180,7 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(LuckyDrawViewController(), animated: true)
         case 2:
             printLog("2")
+            navigationController?.pushViewController(CardViewController(), animated: true)
         default:
             printLog("特殊情况")
         }

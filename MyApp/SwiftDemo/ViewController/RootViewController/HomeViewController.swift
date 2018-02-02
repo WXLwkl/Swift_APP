@@ -89,7 +89,7 @@ class HomeViewController: RootViewController,UIScrollViewDelegate,BannerViewDele
         bannerView?.bannerModels = self.cycleModels
         bannerView?.delegate = self
         bannerView?.autoScroll = true
-        bannerView?.timeInterval = 5
+        bannerView?.timeInterval = 3
         return bannerView!
     }
     

@@ -20,35 +20,35 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>我的位置</string>
+		<string>水波</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
 		<key>className</key>
-		<string>MyLocationViewController</string>
+		<string>WaterWaveViewVC</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>我的位置</string>
+		<string>卡片</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
 		<key>className</key>
-		<string>FindViewController</string>
+		<string>CardViewController</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>我的位置</string>
+		<string>Cell的多选</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
 		<key>className</key>
-		<string>MyLocationViewController</string>
+		<string>CellSelectViewController</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>我的位置</string>
+		<string>引导页</string>
 		<key>icon</key>
 		<string>searchbutton_nor</string>
 		<key>className</key>
-		<string>MyLocationViewController</string>
+		<string>GuideViewController</string>
 	</dict>
 	<dict>
 		<key>name</key>

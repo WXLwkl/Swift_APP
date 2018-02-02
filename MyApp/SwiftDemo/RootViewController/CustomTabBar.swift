@@ -33,7 +33,10 @@ class CustomTabBar: UITabBar {
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-        
+        let topView = UIView(frame: CGRect(x: 0, y: -1, width: self.bounds.width, height: 1))
+        topView.backgroundColor = UIColor.lightGray
+        self.addSubview(topView)
+
         self.addSubview(addButton)
         addButton.setBackgroundImage(#imageLiteral(resourceName: "post_normal"), for: .normal)
         addButton.adjustsImageWhenHighlighted = false
@@ -59,8 +62,6 @@ class CustomTabBar: UITabBar {
         super.layoutSubviews()
         
         var itemX: CGFloat = 0.0
-        let itemY: CGFloat = 0.0
-        let itemH: CGFloat = self.bounds.size.height
         let add: CGFloat   = CGFloat(self.items!.count)
         let itemW: CGFloat = self.bounds.size.width / (add + 1)
         
@@ -73,7 +74,8 @@ class CustomTabBar: UITabBar {
                     itemCurrent = 3
                 }
                 itemX = itemCurrent * itemW
-                item.frame = CGRect(x: itemX, y: itemY, width: itemW, height: itemH)
+                item.x = itemX
+                item.width = itemW;
                 itemCurrent += 1
             } 
         }

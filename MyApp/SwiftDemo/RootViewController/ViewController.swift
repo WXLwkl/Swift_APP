@@ -28,11 +28,6 @@ class ViewController: UIViewController, CloseSlideMenuDelegate {
 
         
         
-        printLog("ssssssss")
-        
-        
-        
-        
         homeTabBarController = TabBarController()
         slideMenu = LeftSlideMenuController()
 

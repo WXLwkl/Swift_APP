@@ -16,13 +16,14 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         let customTabbar: CustomTabBar = CustomTabBar.init(frame: self.tabBar.frame)
         self.setValue(customTabbar, forKey: "tabBar")
         customTabbar.delegateTabbar = self
-        
+//        设置选中颜色
+        customTabbar.tintColor = UIColor(red: 0/255, green:186/255, blue:255/255, alpha:1)
         self.delegate = self as UITabBarControllerDelegate
 
         self.tabBar.isTranslucent = false  //避免受默认的半透明色影响，关闭
 
-//        设置选中颜色
-        self.tabBar.tintColor = UIColor(red: 0/255, green:186/255, blue:255/255, alpha:1)
+
+
         
         addChildViewControllers()
         
