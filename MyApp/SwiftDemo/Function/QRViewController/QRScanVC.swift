@@ -164,46 +164,28 @@ class QRScanVC: RootViewController {
     private func turnTorchOn()
     {
         
-        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
-        {
-            
-            if lightOn
-            {
-                
+        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else {
+            if lightOn{
                 Tool.confirm(title: "温馨提示", message: "闪光灯不可用", controller: self)
-                
             }
-            
             return
         }
-        
-        if device.hasTorch
-        {
-            do
-            {
+        if device.hasTorch {
+            do {
                 try device.lockForConfiguration()
-                
-                if lightOn && device.torchMode == .off
-                {
+                if lightOn && device.torchMode == .off {
                     device.torchMode = .on
                 }
-                
-                if !lightOn && device.torchMode == .on
-                {
+                if !lightOn && device.torchMode == .on {
                     device.torchMode = .off
                 }
-                
                 device.unlockForConfiguration()
-            }
-            catch{ }
-            
+            } catch { }
         }
-        
     }
 
 //MARK: - 相册
-    func photo()
-    {
+    func photo() {
         
         Tool.shared.choosePicture(self, editor: true, options: .photoLibrary) {[weak self] (image) in
             

@@ -19,7 +19,6 @@ extension UIView {
         let maskLayer = CAShapeLayer()
         maskLayer.frame = bounds
         maskLayer.path = maskPath.cgPath
-        layer.addSublayer(maskLayer)
         layer.mask = maskLayer
     }
     

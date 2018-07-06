@@ -27,6 +27,9 @@ class QRViewController: RootViewController {
         navigationItem.title = "二维码"
   
         textF.text = text
+        
+        logoImgView.backgroundColor = .purple
+        logoImgView.clipRectCorner(direction: [.topLeft, .topRight], cornerRadius: 20)
     }
     //二维码生成
     @IBAction func createBtnClick(_ sender: UIButton) {
