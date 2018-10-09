@@ -1,5 +1,5 @@
 //
-//  GameViewModel.swift
+//  AmuseViewModel.swift
 //  DYTV
 //
 //  Created by xingl on 2018/10/9.
@@ -8,21 +8,18 @@
 
 import UIKit
 
-class GameViewModel {
-
-    lazy var games: [GameModel] = [GameModel]()
+class AmuseViewModel {
+    lazy var anchorGroups: [AnchorGroup] = [AnchorGroup]()
 }
 
-extension GameViewModel {
-    func loadAllGameData(finishedCallback: @escaping () -> ()) {
-        NetworkTools.requestData(type: .get, url: "http://capi.douyucdn.cn/api/v1/getColumnDetail") { (result) in
+extension AmuseViewModel {
+    func loadAmuseData(finishedCallback : @escaping () -> ()) {
+        NetworkTools.requestData(type: .get, url: "https://capi.douyucdn.cn/api/v1/getHotRoom/2") { (result) in
             guard let resultDict = result as? [String : Any] else { return }
             guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
             for dict in dataArray {
-                
-                self.games.append(GameModel(dict: dict))
-                
+                self.anchorGroups.append(AnchorGroup(dict: dict))
             }
             finishedCallback()
         }

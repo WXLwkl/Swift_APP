@@ -54,6 +54,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
+                <outlet property="moreBtn" destination="Rwm-rn-e5N" id="gdc-DV-P8n"/>
                 <outlet property="titleLabel" destination="1jF-tb-Agg" id="haU-ha-Nbs"/>
             </connections>
             <point key="canvasLocation" x="104" y="84.557721139430285"/>

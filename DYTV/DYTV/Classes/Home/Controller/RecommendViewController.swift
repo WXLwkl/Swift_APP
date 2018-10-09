@@ -12,7 +12,7 @@ private let kItemMargin: CGFloat = 10
 private let kItemW = (kScreenW - kItemMargin * 3) / 2
 private let kNormalItemH = kItemW * 3 / 4
 private let kPerttyItemH = kItemW * 4 / 3
-private let kHeaderViewH:CGFloat = 50
+private let kHeaderViewH: CGFloat = 50
 
 private let kCycleViewH = kScreenW * 3 / 8
 private let kGameViewH: CGFloat = 90
@@ -89,7 +89,16 @@ extension RecommendViewController {
         recommendVM.requestData {
             self.collectionView.reloadData()
             
-            self.gameView.groups = self.recommendVM.anchorGroups
+            var groups = self.recommendVM.anchorGroups
+            
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            let moreGroup = AnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            
+            self.gameView.groups = groups
         }
         // 轮播数据
         recommendVM.requestCycleData {

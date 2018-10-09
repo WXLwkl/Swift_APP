@@ -17,7 +17,7 @@ class CycleModel: NSObject {
     @objc var room: [String : Any]? {
         didSet {
             guard let room = room else { return }
-            anchor = AnchorModel(dict: room as! [String : NSObject])
+            anchor = AnchorModel(dict: room as! [String : Any])
         }
     }
     // 主播信息对应的模型对象

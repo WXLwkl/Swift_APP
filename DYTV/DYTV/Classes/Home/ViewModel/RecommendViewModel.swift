@@ -26,8 +26,8 @@ extension RecommendViewModel {
         dispatchGroup.enter()
         NetworkTools.requestData(type: .get, url: "https://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time": NSDate.getCurrentTime() as NSString]) { (result) in
             
-            guard let resultDict = result  as? [String : NSObject] else { return }
-            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+            guard let resultDict = result  as? [String : Any] else { return }
+            guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
             
             self.bigDataGroup.tag_name = "热门"
@@ -43,8 +43,8 @@ extension RecommendViewModel {
         dispatchGroup.enter()
         NetworkTools.requestData(type: .get, url: "https://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parameters) { (result) in
             
-            guard let resultDict = result  as? [String : NSObject] else { return }
-            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+            guard let resultDict = result  as? [String : Any] else { return }
+            guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
             
             self.prettyGroup.tag_name = "颜值"
@@ -60,8 +60,8 @@ extension RecommendViewModel {
         dispatchGroup.enter()
         NetworkTools.requestData(type: .get, url: "https://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) in
             
-            guard let resultDict = result  as? [String : NSObject] else { return }
-            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+            guard let resultDict = result  as? [String : Any] else { return }
+            guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
             for dict in dataArray {
                 let group = AnchorGroup(dict: dict)
@@ -82,8 +82,8 @@ extension RecommendViewModel {
         NetworkTools.requestData(type: .get, url: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
             
             
-            guard let resultDict = result as? [String : NSObject] else { return }
-            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+            guard let resultDict = result as? [String : Any] else { return }
+            guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
             for dict in dataArray {
                 self.cycleModels.append(CycleModel(dict: dict))

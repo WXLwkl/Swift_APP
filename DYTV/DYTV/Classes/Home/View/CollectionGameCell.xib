@@ -21,9 +21,6 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBz-c8-lKZ">
                         <rect key="frame" x="15" y="65" width="50" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="QMj-NU-Sgc"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -31,7 +28,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-5u-Wak">
                         <rect key="frame" x="15" y="10" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="SLU-5u-Wak" secondAttribute="height" multiplier="1:1" id="0zu-Sq-xjn"/>
+                            <constraint firstAttribute="height" constant="50" id="K9D-ie-t3r"/>
+                            <constraint firstAttribute="width" constant="50" id="WkW-9o-4hY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -44,11 +42,10 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="SLU-5u-Wak" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="DiI-Vc-5jB"/>
-                <constraint firstItem="HBz-c8-lKZ" firstAttribute="top" secondItem="SLU-5u-Wak" secondAttribute="bottom" constant="5" id="HzZ-aU-MeB"/>
-                <constraint firstItem="SLU-5u-Wak" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="PjX-uU-KYi"/>
-                <constraint firstItem="HBz-c8-lKZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Pvx-V1-6fd"/>
-                <constraint firstAttribute="bottom" secondItem="HBz-c8-lKZ" secondAttribute="bottom" constant="10" id="gsH-3W-f3L"/>
+                <constraint firstItem="HBz-c8-lKZ" firstAttribute="centerX" secondItem="SLU-5u-Wak" secondAttribute="centerX" id="AUk-XL-cC6"/>
+                <constraint firstItem="HBz-c8-lKZ" firstAttribute="top" secondItem="SLU-5u-Wak" secondAttribute="bottom" constant="5" id="Xx9-DV-BzG"/>
+                <constraint firstItem="SLU-5u-Wak" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eQA-Mj-3Tg"/>
+                <constraint firstItem="SLU-5u-Wak" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-10" id="kwA-XV-A4C"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="129" height="179"/>
