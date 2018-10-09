@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionPrettyCell" customModule="DYTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="239" height="284"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="239" height="284"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_placeholder_f" translatesAutoresizingMaskIntoConstraints="NO" id="96t-W4-abR">
+                        <rect key="frame" x="0.0" y="0.0" width="239" height="234"/>
+                    </imageView>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-w8-34E">
+                        <rect key="frame" x="0.0" y="260" width="48" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="zPv-Aw-FNp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="上海市" image="icon_location">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快乐最重要" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94c-AC-hcx">
+                        <rect key="frame" x="0.0" y="239" width="67" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="fZC-ei-4tZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufp-o1-WnM">
+                        <rect key="frame" x="174" y="5" width="60" height="20"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="OtO-ss-voj"/>
+                            <constraint firstAttribute="width" constant="60" id="TNQ-2N-HRM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="96t-W4-abR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0L8-2R-HGR"/>
+                <constraint firstItem="96t-W4-abR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F0G-P3-DJt"/>
+                <constraint firstAttribute="bottom" secondItem="gOM-w8-34E" secondAttribute="bottom" constant="10" id="Iz5-qu-oeT"/>
+                <constraint firstAttribute="trailing" secondItem="ufp-o1-WnM" secondAttribute="trailing" constant="5" id="OcU-IP-Ur6"/>
+                <constraint firstItem="gOM-w8-34E" firstAttribute="leading" secondItem="94c-AC-hcx" secondAttribute="leading" id="RKv-XB-IOK"/>
+                <constraint firstItem="ufp-o1-WnM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="cbW-rc-FTI"/>
+                <constraint firstItem="gOM-w8-34E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hR8-d3-p8N"/>
+                <constraint firstAttribute="trailing" secondItem="96t-W4-abR" secondAttribute="trailing" id="iLG-qz-UtX"/>
+                <constraint firstItem="gOM-w8-34E" firstAttribute="top" secondItem="94c-AC-hcx" secondAttribute="bottom" constant="5" id="iWw-WE-SgW"/>
+                <constraint firstItem="94c-AC-hcx" firstAttribute="top" secondItem="96t-W4-abR" secondAttribute="bottom" constant="5" id="jZe-Mc-quv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="239" height="284"/>
+            <connections>
+                <outlet property="cityBtn" destination="gOM-w8-34E" id="Tbc-qM-lNy"/>
+                <outlet property="iconImageView" destination="96t-W4-abR" id="fXC-IZ-kFX"/>
+                <outlet property="nickNameLabel" destination="94c-AC-hcx" id="d8G-Ur-prV"/>
+                <outlet property="onlineLabel" destination="ufp-o1-WnM" id="E3N-q7-98n"/>
+            </connections>
+            <point key="canvasLocation" x="40.799999999999997" y="94.452773613193415"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_location" width="14" height="14"/>
+        <image name="icon_placeholder_f" width="100" height="100"/>
+    </resources>
+</document>
