@@ -28,11 +28,7 @@ class HomeViewController: BaseViewController {
         childVCs.append(RecommendViewController())
         childVCs.append(GameViewController())
         childVCs.append(AmuseViewController())
-        
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-        childVCs.append(vc)
-        
+        childVCs.append(FunnyViewController())
         
         let contentView = PageContentView(frame: contentFrame, childVCs: childVCs, parentViewController: self)
         contentView.delegate = self
@@ -53,7 +49,7 @@ class HomeViewController: BaseViewController {
 }
 // MARK: - 设置UI界面
 extension HomeViewController {
-    private func setupUI() {
+    override func setupUI() {
         
         automaticallyAdjustsScrollViewInsets = false
         

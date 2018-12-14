@@ -230,13 +230,13 @@ class QRScanVC: RootViewController {
             
 //            设置扫描类型
             output.metadataObjectTypes = [
-            AVMetadataObjectTypeQRCode,
-            AVMetadataObjectTypeCode39Code,
-            AVMetadataObjectTypeCode93Code,
-            AVMetadataObjectTypeCode128Code,
-            AVMetadataObjectTypeCode39Mod43Code,
-            AVMetadataObjectTypeEAN13Code,
-            AVMetadataObjectTypeEAN8Code
+                AVMetadataObjectTypeQRCode,
+                AVMetadataObjectTypeCode39Code,
+                AVMetadataObjectTypeCode93Code,
+                AVMetadataObjectTypeCode128Code,
+                AVMetadataObjectTypeCode39Mod43Code,
+                AVMetadataObjectTypeEAN13Code,
+                AVMetadataObjectTypeEAN8Code
             ]
             
 //            预览图层

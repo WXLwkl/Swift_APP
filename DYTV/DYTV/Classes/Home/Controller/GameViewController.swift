@@ -14,7 +14,6 @@ private let kItemH: CGFloat = kItemW * 6 / 5
 private let kHeaderViewH: CGFloat = 50
 private let kGameViewH: CGFloat = 90
 
-
 private let kGameCellID = "kGameCellID"
 private let kHeaderViewID = "kHeaderViewID"
 
@@ -66,7 +65,9 @@ class GameViewController: BaseViewController {
 }
 // MARK: - 界面UI设置
 extension GameViewController {
-    fileprivate func setupUI() {
+    override func setupUI() {
+        
+        contentView = collectionView
         view.addSubview(collectionView)
         
         collectionView.addSubview(topHeaderView)
@@ -74,6 +75,8 @@ extension GameViewController {
         collectionView.addSubview(gameView)
         
         collectionView.contentInset = UIEdgeInsets(top: kHeaderViewH + kGameViewH, left: 0, bottom: 0, right: 0 )
+        
+        super.setupUI()
     }
 }
 // MARK: - 请求数据
@@ -86,6 +89,9 @@ extension GameViewController {
             // 常用游戏
             let count = self.gameVM.games.count > 10 ? 10 : self.gameVM.games.count
             self.gameView.groups = Array(self.gameVM.games[0..<count])
+            
+            //请求数据完成，停止加载动画
+            self.loadDataFinished()
         }
     }
 }
